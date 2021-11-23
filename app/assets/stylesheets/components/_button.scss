@@ -1,0 +1,21 @@
+.button {
+width: 100%;
+height: 32px;
+border: 1px solid;
+color: #fff;
+background: #ff5757;
+font-size: 22px;
+border-radius: 8px;
+font-family: Arial, Helvetica, sans-serif;
+font-weight: medium;
+}
+
+#secondary {
+color: #ff5757;
+background: #fff;
+}
+
+.button:hover {
+  color: $gray;
+  opacity: 0.5;
+}
