@@ -10,10 +10,38 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_22_162508) do
+ActiveRecord::Schema.define(version: 2021_11_23_113516) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "charities", force: :cascade do |t|
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.string "charity_name"
+    t.string "category"
+    t.text "description"
+    t.index ["email"], name: "index_charities_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_charities_on_reset_password_token", unique: true
+  end
+
+  create_table "employers", force: :cascade do |t|
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.string "company_name"
+    t.index ["email"], name: "index_employers_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_employers_on_reset_password_token", unique: true
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -23,8 +51,16 @@ ActiveRecord::Schema.define(version: 2021_11_22_162508) do
     t.datetime "remember_created_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "first_name"
+    t.string "last_name"
+    t.text "description"
+    t.integer "age"
+    t.boolean "dbs_checked"
+    t.bigint "employer_id", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["employer_id"], name: "index_users_on_employer_id"
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "users", "employers"
 end

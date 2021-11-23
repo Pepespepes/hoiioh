@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  devise_for :employers
+  devise_for :charities
   devise_for :users
   root to: 'pages#home'
   get 'profile', to: 'users#profile'
@@ -7,7 +9,6 @@ Rails.application.routes.draw do
   end
   resources :events, only: %i[index show destroy edit update]
   resources :employers, only: %i[new create dashboard]
-  resources :users, only: %i[new create]
   resources :chatrooms, only: %i[show] do
     resources :messages, only: %i[create]
   end
