@@ -6,9 +6,12 @@
 
 <h1>Welcome to HOIIOH</h1>
 
-<div class="container">
-<p>map will go here</p>
+<div style="width: 100%; height: 600px;"
+  data-controller="map"
+  data-mapbox-markers-value="<%= @markers.to_json %>"
+  data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
 </div>
+
 
 
 <div class="app">
