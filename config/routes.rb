@@ -6,6 +6,10 @@ Rails.application.routes.draw do
 
   resources :charities, only: %i[create show] do
     resources :events, only: %i[new create show]
+    resources :events, only: %i[new create]
+  end
+  resources :events, only: %i[index show destroy edit update] do
+    resources :bookings, only: %i[new create]
   end
   resources :events, only: %i[index show destroy edit update]
   resources :employers, only: %i[create dashboard]
@@ -14,5 +18,6 @@ Rails.application.routes.draw do
     resources :messages, only: %i[create]
   end
   resources :bookings, only: %i[new create index destroy]
+  resources :bookings, only: %i[index destroy]
 end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
