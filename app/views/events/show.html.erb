@@ -1,0 +1,33 @@
+<div class="container event-page-container">
+
+ <div class="event-image">
+
+<h1> <%= @charity.title %> </h1>
+<p> <%= @charity.description %> </p>
+<h1> <%= @charity.location %> </h1>
+
+<h2> <%= "Overview of responsibilites"%>
+
+
+
+<div class="d-flex justify-content-center">
+<%= #link_to "Find out more about us", charity_path(@charity), class:"button"%>
+</div>
+
+<br>
+  <h5> Date: <%= #@charity.date %></h5>
+  <h5>Start time: <%= #@charity.start_time %></h5>
+  <h5>Duration: <%= #@charity.duration %></h5>
+
+
+
+<div class="d-flex justify-content-center">
+<%= #link_to "Book now", new_event_booking_path(@event), class:"button"%>
+</div>
+<br>
+
+<h2>Reviews</h2>
+
+
+
+<%= if current_user.current_role == "charity" %>

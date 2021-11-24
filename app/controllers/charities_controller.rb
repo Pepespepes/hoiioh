@@ -3,7 +3,11 @@ class CharitiesController < ApplicationController
   def create
     @charity = Charity.new(charity_params)
     @charity.user = current_user
-    @charity.save
+    if @charity.save
+      redirect_to root_path
+    else
+      redirect_to details_path
+    end
   end
 
   private
