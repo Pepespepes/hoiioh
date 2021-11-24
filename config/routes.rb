@@ -2,12 +2,14 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
   get 'profile', to: 'users#profile'
-  resources :charities, only: %i[new create show] do
+  get 'details', to: 'pages#details'
+
+  resources :charities, only: %i[create show] do
     resources :events, only: %i[new create show]
   end
   resources :events, only: %i[index show destroy edit update]
-  resources :employers, only: %i[new create dashboard]
-  resources :users, only: %i[new create]
+  resources :employers, only: %i[create dashboard]
+  resources :volunteers, only: %i[create]
   resources :chatrooms, only: %i[show] do
     resources :messages, only: %i[create]
   end

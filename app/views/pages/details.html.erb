@@ -1,0 +1,27 @@
+<h1> Complete your <%= current_user.current_role.downcase %> profile</h1>
+
+
+<% if current_user.current_role == "Charity" %>
+  <%= simple_form_for(@charity) do |f| %>
+    <%= f.input :charity_name %>
+    <%= f.input :category %>
+    <%= f.input :description %>
+    <%= f.submit :Submit, class: 'button' %>
+  <% end %>
+<% elsif current_user.current_role == "Volunteer" %>
+  <%= simple_form_for(@volunteer) do |f| %>
+    <%= f.input :first_name %>
+    <%= f.input :last_name %>
+    <%= f.input :age %>
+    <%= f.input :dbs_checked, as: :radio_buttons %>
+    <%= f.input :description %>
+    <%= f.input :employer_id, label: "Employer ID" %>
+    <%= f.submit :Submit, class: 'button' %>
+  <% end %>
+<% elsif current_user.current_role == "Employer" %>
+  <%= simple_form_for(@employer) do |f| %>
+    <%= f.input :company_name %>
+    <%= f.submit :Submit, class: 'button' %>
+  <% end %>
+
+<% end %>
