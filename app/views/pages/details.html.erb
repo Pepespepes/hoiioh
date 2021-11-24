@@ -4,7 +4,7 @@
 <% if current_user.current_role == "Charity" %>
   <%= simple_form_for(@charity) do |f| %>
     <%= f.input :charity_name %>
-    <%= f.select :category, :collection => Charity::CATEGORIES  %>
+    <%= f.input :category, as: :select, :collection => Charity::CATEGORIES, label: "Select the charity category" %>
     <%= f.input :description %>
     <%= f.submit :Submit, class: 'button' %>
   <% end %>
