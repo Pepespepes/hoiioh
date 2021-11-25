@@ -10,6 +10,10 @@ class CharitiesController < ApplicationController
     end
   end
 
+  def show
+    @charity = Charity.find(params[:id])
+  end
+
   private
 
   def charity_params
