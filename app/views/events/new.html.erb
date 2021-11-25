@@ -1,0 +1,18 @@
+<div class="booking-card container">
+  <h1>Add the event for your charity</h1>
+   <h1 class="booking-form-charity-event"></h1>
+
+  <div>
+    <%= simple_form_for [@event ] do |f| %>
+      <%= f.input :date, label: 'Date', as: :date %>
+      <%= f.input :start_time, label: 'Time', as: :time %>
+      <%= f.input :location, label: 'Location', as: :string %>
+      <%= f.input :duration, label: 'Duration (Hours):', collection: 1..18 %>
+      <%= f.input :number_position, label: 'Number of positions:', as: :integer %>
+      <%= f.submit 'Confirm Event', class:"btn btn-success" %>
+    <% end %>
+  </div>
+
+  <%= #link_to bookings_path(@booking) do %>?
+  <% end %>
+</div>
