@@ -178,7 +178,8 @@ end
 charity_counter = 0
 40.times do
   Event.create!(
-    location: Faker::Address.full_address,
+    event_name: Faker::Mountain.name,
+    address: Faker::Address.full_address,
     date: Faker::Date.forward(days: 2),
     start_time: Time.now,
     duration: (1..8).to_a.sample,
