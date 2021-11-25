@@ -1,4 +1,6 @@
 class EventsController < ApplicationController
+  skip_before_action :authenticate_user!, only: :show
+
   def new
     @event = Event.new
   end
@@ -12,6 +14,10 @@ class EventsController < ApplicationController
     else
       render :new
     end
+  end
+
+  def show
+    @event = Event.find(params[:id])
   end
 
   def event_params

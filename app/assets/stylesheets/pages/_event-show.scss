@@ -1,0 +1,46 @@
+.event-details p {
+  color: #756a6a;
+  font-size: 16px;
+}
+
+.event-details h3 {
+  margin-top: 8px;
+}
+
+.event-details h4 {
+  font-size: 16px;
+}
+
+.event-details ul {
+  list-style-type: disc;
+  margin-left: 15px;
+}
+
+.event-details li {
+  font-size: 14px;
+}
+
+.event-details .button {
+  position: sticky;
+  bottom: 0;
+}
+
+.event-timings {
+  margin-bottom: 8px;
+  color: black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.event-timings-detail {
+  background-color: rgba(255, 87, 87, 0.5);
+  border-radius: 5px;
+  text-align: center;
+  width: 30%;
+  padding: 8px 8px;
+  padding-top: 16px;
+  flex-grow: 1;
+  margin: 0px 8px;
+}

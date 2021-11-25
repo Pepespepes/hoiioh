@@ -8,6 +8,10 @@ font-size: 22px;
 border-radius: 8px;
 font-family: Arial, Helvetica, sans-serif;
 font-weight: medium;
+text-align: center;
+margin: 0px;
+padding: 0px;
+line-height: 1.45;
 }
 
 #secondary {
@@ -18,4 +22,11 @@ background: #fff;
 .button:hover {
   color: $gray;
   opacity: 0.5;
+}
+
+.button a {
+  color: #fff;
+  font-size: 22px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: medium;
 }
