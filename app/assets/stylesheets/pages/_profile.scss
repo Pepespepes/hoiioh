@@ -1,0 +1,23 @@
+.profile-banner-img img {
+  width: 100%;
+  object-fit: cover;
+  }
+
+
+@media(min-width: 600px) {
+  .profile-banner-img img {
+  height: 40vh;
+  }
+}
+
+@media(max-width: 600px) {
+  .profile-banner-img img {
+  height: 25vh;
+  }
+}
+
+@media(min-width: 950px) {
+  .profile-banner-img img {
+  height: 50vh;
+  }
+}
