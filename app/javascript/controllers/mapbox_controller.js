@@ -20,6 +20,7 @@ export default class extends Controller {
       mapboxgl: mapboxgl
     }));
     this._addMarkersToMap();
+    this._fitMapToMarkers();
   }
 
   //addmarkers to map here
@@ -32,6 +33,10 @@ export default class extends Controller {
         .addTo(this.map);
     });
   }
-
+  _fitMapToMarkers() {
+    const bounds = new mapboxgl.LngLatBounds();
+    this.markersValue.forEach(marker => bounds.extend([marker.lng, marker.lat]));
+    this.map.fitBounds(bounds, { padding: 70, maxZoom: 15, duration: 0 });
+  }
 
 }
