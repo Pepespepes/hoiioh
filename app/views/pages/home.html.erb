@@ -1,12 +1,9 @@
-<h1 class="main">Charity shops</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<%# <h1 class="main">Charity shops</h1>
+<p>Find me in app/views/pages/home.html.erb</p> %>
 
-<button type="button" class="button">Button</button>
-<button type="button" class="button" id="secondary">Button</button>
+<%# <h1>Welcome to HOIIOH</h1> %>
 
-<h1>Welcome to HOIIOH</h1>
-
-<div style="width: 100%; height: 600px;"
+<div class="map" style="width: 98%; height: 400px;"
   data-controller="mapbox"
   data-mapbox-markers-value="<%= @markers.to_json %>"
   data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
@@ -15,7 +12,7 @@
 
 
 <div class="app">
-  <h2>Charity Category 1</h2>
+  <h3>Charity Category 1</h3>
 
   <ul class="hs full">
     <li class="item"> <%= render partial: 'card' %> </li>
@@ -53,9 +50,8 @@
     <li class="item">test</li>
   </ul>
 
-  <div class="container">
-    <div class="item">
-      <h3>Block for context</h3>
-    </div>
-  </div>
 </div>
+
+
+<%# <button type="button" class="button">Button</button>
+<button type="button" class="button" id="secondary">Button</button> %>
