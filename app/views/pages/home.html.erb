@@ -15,11 +15,9 @@
   <h3 class="carousel-card">Charity Category 1</h3>
 
   <ul class="hs full">
-    <li class="item"> <%= render partial: 'card' %> </li>
-    <li class="item">Item 1.2</li>
-    <li class="item">Item 1.3</li>
-    <li class="item">Item 1.4</li>
-    <li class="item">Item 1.5</li>
+    <% @events.first(10).each do |event| %>
+    <li class="item"> <%= render partial: 'card', locals: {event: event} %> </li>
+    <% end  %>
   </ul>
 
   <h2>Charity Category 2</h2>

@@ -1,0 +1,16 @@
+
+
+<div class="booking-card container">
+<h1>Event Registration</h1>
+</div>
+
+<% img_url = "https://images.unsplash.com/photo-1578357078586-491adf1aa5ba?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8dm9sdW50ZWVyfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60" %>
+<div class="banner-img">
+  <img src=<%= img_url %> alt="holding hands">
+</div>
+<div>
+<%= simple_form_for [@event, @booking] do |f| %>
+<%= f.check_box :employer_associated, label: 'Are you joining this event through your company?' %>
+<%= f.submit 'Confirm Booking', class:"button" %>
+<% end %>
+</div>

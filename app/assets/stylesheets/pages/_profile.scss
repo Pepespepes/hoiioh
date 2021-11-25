@@ -21,3 +21,35 @@
   height: 50vh;
   }
 }
+
+.profile-avatar {
+  text-align: center;
+  margin-top: -45px;
+}
+
+.profile-vol-summary {
+  display: flex;
+  text-align: center;
+  justify-content: space-between;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.profile-vol-summary .summary-card {
+  padding: 8px;
+  background-color: rgba(255, 87, 87, 0.5);
+  border-radius: 5px;
+  width: 48%;
+}
+
+.summary-card p {
+  margin-bottom: 0px;
+}
+
+.profile-container h3 {
+  text-align: center;
+  padding-top: 8px;
+}
+
+.profile-number {
+font-size: larger;}

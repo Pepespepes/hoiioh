@@ -1,14 +1,44 @@
 <% banner_img = 'https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80' %>
+<% profile_avatar = 'https://images.unsplash.com/photo-1607990281513-2c110a25bd8c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1234&q=80' %>
+
+
 <div class='banner-img'>
   <img src=<%= banner_img %> alt="Make a change image">
 </div>
 
 <div class='profile-avatar'>
-
+  <img src=<%= profile_avatar %> alt="Profile image" class='avatar-xlarge'>
 </div>
 
-<div class='profile-name'>
-  <h3>
-    <%= current_user.volunteer.first_name %>
-  </h3>
+<div class='container profile-container'>
+  <h3><%= current_user.volunteer.first_name %> <%= current_user.volunteer.last_name %></h3>
+
+  <div class='profile-vol-summary'>
+    <div class='summary-card'>
+      <p><span class='profile-number'>3</span><br>events attended<br><span class='profile-number'>🙌</span></p>
+    </div>
+    <div class='summary-card'>
+      <p><span class='profile-number'>15</span><br>hours volunteered<br><span class='profile-number'>🎉</span></p>
+    </div>
+  </div>
+
+  <div class='profile-summary'>
+    <p><%= current_user.volunteer.description %></p>
+    <p><strong>Age: </strong><%= current_user.volunteer.age %> years old</p>
+      <% if current_user.volunteer.dbs_checked %>
+        <p><strong>DBS Checked: </strong>You have a valid DBS certificate.</p>
+      <% else %>
+        <p><strong>DBS Checked: </strong>You don't have a valid DBS certificate. <a href="https://www.gov.uk/request-copy-criminal-record">Click here</a> to apply for one.</p>
+      <% end %>
+
+      <% unless current_user.volunteer.employer_id == nil %>
+      <strong>Your associated employer ID: </strong><%= current_user.volunteer.employer_id %>
+      <% end %>
+    </p>
+  </div>
+
+  <div>
+    <h5>Your reviews</h5>
+    <p>REVIEW REVIEW REVIEW REVIEW REVIEW REVIEW REVIEW REVIEW REVIEW REVIEW</p>
+  </div>
 </div>
