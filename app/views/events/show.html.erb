@@ -33,7 +33,9 @@
       </div>
     </div>
 
-    <%= link_to "Find out more about #{@event.charity.charity_name}.", charity_path(@event.charity) %>
+    <div class="charity-link">
+      <%= link_to "Find out more about #{@event.charity.charity_name}.", charity_path(@event.charity) %>
+    </div>
 
     <h5>Overview of responsibilites</h5>
     <ul>
