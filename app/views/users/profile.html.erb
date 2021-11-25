@@ -1,14 +1,35 @@
 <% banner_img = 'https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80' %>
+<% profile_avatar = 'https://images.unsplash.com/photo-1607990281513-2c110a25bd8c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1234&q=80' %>
+
+
 <div class='banner-img'>
   <img src=<%= banner_img %> alt="Make a change image">
 </div>
 
 <div class='profile-avatar'>
-
+  <img src=<%= profile_avatar %> alt="Profile image" class='avatar-xlarge'>
 </div>
 
-<div class='profile-name'>
-  <h3>
-    <%= current_user.volunteer.first_name %>
-  </h3>
+<div class='profile-summary'>
+  <h3><%= current_user.volunteer.first_name %> <%= current_user.volunteer.last_name %></h3>
+  <h4>Your Details</h4>
+  <p><%= current_user.volunteer.description %></p>
+  <p><strong>Age: </strong><%= current_user.volunteer.age %> years old</p>
+  <p><strong>DBS Checked: </strong>You <%= current_user.volunteer.dbs_checked ? 'have' : 'do not have' %> a valid DBS certificate</p>
+  <p>
+    <% unless current_user.volunteer.employer_id == nil %>
+    <strong>Your associated employer ID: </strong><%= current_user.volunteer.employer_id %>
+    <% end %>
+  </p>
+</div>
+
+<div>
+  <h4>Your Volunteering Summary</h4>
+  <p>🙌 x volunteering events attended</p>
+  <p>⏱ x number of hours volunteered</p>
+</div>
+
+<div>
+  <h4>Your reviews</h4>
+  <p>REVIEW REVIEW REVIEW REVIEW REVIEW REVIEW REVIEW REVIEW REVIEW REVIEW</p>
 </div>
