@@ -1,5 +1,5 @@
 class Charity < ApplicationRecord
-  CATEGORIES = %w[Animal Human\ Services Children Health Education Environment]
+  CATEGORIES = %w[Human\ Welfare Animal\ Welfare Environment Sports Charity\ Shops]
 
   belongs_to :user
   has_many :messages

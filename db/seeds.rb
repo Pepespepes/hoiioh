@@ -51,22 +51,22 @@ end
 
 # CHARITIES
 food_cycle = Charity.create!(charity_name: 'FoodCycle Hackney',
-                             category: 'Human Services',
+                             category: 'Human Welfare',
                              description: 'Come and enjoy company and conversation with others from your local area over a delicious meal, prepared with care by FoodCycle volunteers. Everyone is welcome, no matter your background or circumstances. No referral needed, just turn up.',
                              user: User.where(current_role: 'Charity')[0]
                             )
 skyway = Charity.create!(charity_name: 'Skyway',
-                             category: 'Human Services',
+                             category: 'Human Welfare',
                              description: 'We offer a wide range of free-to-access opportunities at youth clubs, community venues, parks, estates, schools and on the streets. Some of the sessions we run focus on developing new skills, learning or participating in sport, but we recognise the most important things are to provide safe, welcoming spaces where people can relax, socialise and have fun.',
                              user: User.where(current_role: 'Charity')[1]
                             )
 national_childrens_bureau = Charity.create!(charity_name: "National Children's Bureau",
-                             category: 'Children',
+                             category: 'Human Welfare',
                              description: 'As a society we provide a vital system of support and services to keep children safe and give them the best childhood. For over 50 years NCB has been driving change throughout this system to make it as effective as possible and to protect the children whose welfare is most at risk.',
                              user: User.where(current_role: 'Charity')[2]
                             )
 child_hope = Charity.create!(charity_name: 'Child Hope',
-                             category: 'Children',
+                             category: 'Human Welfare',
                              description: 'Every child has the right to a safe and secure childhood, but for many these rights are denied. Born into extreme poverty and violence, they are at high risk of exploitation and abuse. Our purpose is to draw out and build on the strengths of children and those around them to tackle injustice. Looking at root causes, such as poverty and inequality, we also focus on influencing the policies and systems that can and must be changed to enable children to thrive.',
                              user: User.where(current_role: 'Charity')[3]
                             )
@@ -75,82 +75,83 @@ hackney_friends_of_the_earth = Charity.create!(charity_name: 'Hackney and Tower 
                              description: 'We are part of an international community dedicated to protecting the natural world and the wellbeing of everyone in it. We lead campaigns, provide resources and information, and drive real solutions to the environmental problems facing us all.',
                              user: User.where(current_role: 'Charity')[4]
                             )
-inspire = Charity.create!(charity_name: 'Inspire!',
-                             category: 'Education',
-                             description: 'Our vision is for all young people to reach their full potential, realise their ambitions and build fulfilling careers and lives. The London Borough of Hackney and surrounding areas have seen a vast improvement in academic achievement since we began in 2004. However, youth unemployment in London remains high. Many young people still lack the knowledge, skills and aspirations needed to build fulfilling careers. We believe that preparing young people for the future is as important as ever.',
+scope = Charity.create!(charity_name: 'Scope',
+                             category: 'Human Welfare',
+                             description: "We're Scope, the disability equality charity in England and Wales. We provide practical information and emotional support when it's most needed and we campaign relentlessly to create a fairer society.",
                              user: User.where(current_role: 'Charity')[5]
                             )
-caramel_rock = Charity.create!(charity_name: 'Caramel Rock',
-                             category: 'Education',
-                             description: 'We are an educational and creative arts charity that provides training and development to young people and young adults. We offer a range of accredited courses and apprenticeships. Caramel Rock is committed to developing the next generation of creatives, giving people the opportunity to access resources and gain work experience in the creative arts. Our aim is to advance the education for disadvantage young people in the fashion and creative arts sector.',
+crisis_hackney = Charity.create!(charity_name: 'Crisis Hackney',
+                             category: 'Charity Shops',
+                             description: 'Charity Shops',
                              user: User.where(current_role: 'Charity')[6]
                             )
-helping_hackney_health = Charity.create!(charity_name: 'Helping Hackney Health',
-                             category: 'Health',
-                             description: "Helping Hackney Health was set up in memory of the late Dr Gaby Tobias to improve the nutritional health and well being of Hackney residents, especially those with particular health needs or with fewer opportunities. We do this by providing free cook and eat classes from our purpose built kitchen at the Well Street GP practice. Gaby's Kitchen was paid for by donations.",
+access_to_sports = Charity.create!(charity_name: 'Access to Sports Project',
+                             category: 'Sports',
+                             description: "The Access to Sports Project deliver a wide range of Sporting Activities for Children and Young People in Hackney, our programme is supported by Young Hackney, local community organisations, schools and the London Borough of Hackney.
+",
                              user: User.where(current_role: 'Charity')[7]
                             )
 humane_society_international = Charity.create!(charity_name: 'Humane Society International',
-                             category: 'Animal',
+                             category: 'Animal Welfare',
                              description: "Humane Society International works around the globe to promote the human-animal bond, rescue and protect dogs and cats, improve farm animal welfare, protect wildlife, promote animal-free testing and research, respond to natural disasters and confront cruelty to animals in all of its forms.",
                              user: User.where(current_role: 'Charity')[8]
                             )
 network_for_animals = Charity.create!(charity_name: 'Network For Animals',
-                             category: 'Animal',
+                             category: 'Animal Welfare',
                              description: "We financially support and provide logistical help for animal shelters, animal welfare initiatives and, importantly, raise public awareness about animal issues. Dogs, cats, horses and donkeys are among the animals who benefit from the work we do with the help of our nearly million supporters, who live all over the world.",
                              user: User.where(current_role: 'Charity')[9]
                             )
 rugby_portobello_trust = Charity.create!(charity_name: 'Rugby Portobello Trust',
-                             category: 'Children',
+                             category: 'Human Welfare',
                              description: "RPT is a children's, youth and family support charity that has been operating in North Kensington for over 130 years. We provide a range of sporting, cultural and educational activities which are delivered in the daytime, evenings and during holidays, both on and off site.",
                              user: User.where(current_role: 'Charity')[10]
                             )
 the_drake_trust = Charity.create!(charity_name: 'The Drake Trust',
-                            category: 'Education',
+                            category: 'Human Welfare',
                             description: "The Drake Trust is an architectural conservation charity that gives grants for education and training in building conservation. Set up in 1992 it provides funding for educational institutions, groups and individuals to provide skills training and information on building conservation.",
                             user: User.where(current_role: 'Charity')[11]
-                           )
+                            )
 hestia = Charity.create!(charity_name: 'Hestia',
-                           category: 'Human Services',
-                           description: "At Hestia we support adults and children in times of crisis. We deliver services across London and the surrounding regions, as well as campaign and advocate nationally on the issues that affect the people we work with. Last year we supported 15,238 men, women and children. This includes victims of modern slavery, women and children who have experienced domestic abuse, young care leavers and older people. From giving someone a home, to helping them to get the right mental health support, we support people at the moment of crisis and enable them to build a life beyond a crisis.",
-                           user: User.where(current_role: 'Charity')[12]
-                          )
-tiko_foundation = Charity.create!(charity_name: 'Tiko Foundation',
-                          category: 'Education',
-                          description: "We fund young asylum seekers or young people with limited leave through higher education in the UK who are not entitled to student finance and cannot otherwise afford the costs of higher education. We fund this group of young people because their immigration status does not allow them to secure student finance and therefore does not allow them to access and progress in higher education, despite legally being allowed to live in the UK.",
-                          user: User.where(current_role: 'Charity')[13]
-                         )
+                            category: 'Human Welfare',
+                            description: "At Hestia we support adults and children in times of crisis. We deliver services across London and the surrounding regions, as well as campaign and advocate nationally on the issues that affect the people we work with. Last year we supported 15,238 men, women and children. This includes victims of modern slavery, women and children who have experienced domestic abuse, young care leavers and older people. From giving someone a home, to helping them to get the right mental health support, we support people at the moment of crisis and enable them to build a life beyond a crisis.",
+                            user: User.where(current_role: 'Charity')[12]
+                            )
+red_cross = Charity.create!(charity_name: 'Portobello Red Cross',
+                            category: 'Charity Shops',
+                            description: "We fund young asylum seekers or young people with limited leave through higher education in the UK who are not entitled to student finance and cannot otherwise afford the costs of higher education. We fund this group of young people because their immigration status does not allow them to secure student finance and therefore does not allow them to access and progress in higher education, despite legally being allowed to live in the UK.",
+                            user: User.where(current_role: 'Charity')[13]
+                            )
 british_exploring_society = Charity.create!(charity_name: 'British Exploring Society',
-                         category: 'Children',
-                         description: "British Exploring Society is a world class youth development charity with a unique heritage, founded on the belief that challenging experiences can transform lives, empowering and equipping young people with the courage, skills, resilience and determination to make the most of their future. Most young people return with increased self-belief, a dynamic peer group and the determination and ability to make the most of their future, regardless of where they started out.",
-                         user: User.where(current_role: 'Charity')[14]
-                        )
-welfare_association = Charity.create!(charity_name: 'British Exploring Society',
-                        category: 'Human Services',
-                        description: "The Welfare Association (WA) was registered with the Charity Commission of England and Wales in 1993 (Registered charity number No. 1020238) and works to support some of the most marginalised Palestinian families and communities in the West Bank and Gaza and in the refugee camps and gatherings of Lebanon. Our international development and emergency relief projects are funded through the EC, DFID, UK trusts, foundations, British public and through fundraising events.",
-                        user: User.where(current_role: 'Charity')[15]
-                       )
-healthwatch = Charity.create!(charity_name: 'Healthwatch Central West London',
-                       category: 'Health',
-                       description: "We believe that the best way to improve local services is to listen to the people who use them. Our mission is to enable local residents, patients, and carers to have a say in how local services are shaped and to help guide you to the information and services you need. We are working to gather the best evidence and the widest range of views, especially those from minority groups, ethnic minority groups, people living with disabilities, older people, and younger people.",
-                       user: User.where(current_role: 'Charity')[16]
-                      )
+                            category: 'Human Welfare',
+                            description: "British Exploring Society is a world class youth development charity with a unique heritage, founded on the belief that challenging experiences can transform lives, empowering and equipping young people with the courage, skills, resilience and determination to make the most of their future. Most young people return with increased self-belief, a dynamic peer group and the determination and ability to make the most of their future, regardless of where they started out.",
+                            user: User.where(current_role: 'Charity')[14]
+                           )
+marie_curie = Charity.create!(charity_name: 'Portobello Marie Curie shop',
+                            category: 'Charity Shops',
+                            description: "Our charity shops raise funds so we can care for more people living with a terminal illness and their families. Shop, donate some items or volunteer.",
+                            user: User.where(current_role: 'Charity')[15]
+                           )
+chelsea_foundation = Charity.create!(charity_name: 'The Chelsea Foundation',
+                            category: 'Sports',
+                            description: "Formed in 2010, the Chelsea Foundation brings together the Football in the Community and the Education department along with the club’s other charitable and community activities, including our international work and anti-discrimination projects.",
+                            user: User.where(current_role: 'Charity')[16]
+                            )
 blue_cross_for_pets = Charity.create!(charity_name: 'Blue Cross for Pets Hammersmith',
-                      category: 'Animal',
-                      description: "Pets are at the heart of everything we do. Each year, thousands of cats, dogs, small pets and horses turn to our animal hospitals, clinics and rehoming services for treatment and to find them the happy homes they deserve. Meanwhile, our Education and Behaviour Teams prepare future pet owners to take responsibility and look after their pets for life.",
-                      user: User.where(current_role: 'Charity')[17]
-                     )
+                            category: 'Animal Welfare',
+                            description: "Pets are at the heart of everything we do. Each year, thousands of cats, dogs, small pets and horses turn to our animal hospitals, clinics and rehoming services for treatment and to find them the happy homes they deserve. Meanwhile, our Education and Behaviour Teams prepare future pet owners to take responsibility and look after their pets for life.",
+                            user: User.where(current_role: 'Charity')[17]
+                           )
 the_conservation_foundation = Charity.create!(charity_name: 'The Conservation Foundation',
-                     category: 'Environment',
-                     description: "The Conservation Foundation creates and manages environmental projects, award schemes, awareness campaigns, publications and events covering wide ranging issues and aimed at different and diverse audiences.
-                     Some include the spiritual dimension of concern for the environment. The Foundation is also an environmental incubator, helping fledgling organisations get off the ground and turning good ideas into fundable projects.",
-                     user: User.where(current_role: 'Charity')[18]
-                    )
+                          category: 'Environment',
+                          description: "The Conservation Foundation creates and manages environmental projects, award schemes, awareness campaigns, publications and events covering wide ranging issues and aimed at different and diverse audiences.
+                          Some include the spiritual dimension of concern for the environment. The Foundation is also an environmental incubator, helping fledgling organisations get off the ground and turning good ideas into fundable projects.",
+                          user: User.where(current_role: 'Charity')[18]
+                          )
 ashden = Charity.create!(charity_name: 'Ashden',
-                    category: 'Environment',
-                    description: "Ashden's mission is to accelerate transformative climate solutions and build a more just world. Our awards, events, networks and analysis support climate innovation in the UK and developing countries around the world. Climate champions, organisations on the frontline of the climate crisis, are creating something extraordinary. A planet powered by low-carbon start-ups, bold green policies, liveable cities, better work and clean energy for all. We help these innovators attract investment and funding, build their networks, and create radical change. We do this because we believe in them, and their vision of a cleaner, fairer, healthier world.",
-                    user: User.where(current_role: 'Charity')[19]
-                   )
+                          category: 'Environment',
+                          description: "Ashden's mission is to accelerate transformative climate solutions and build a more just world. Our awards, events, networks and analysis support climate innovation in the UK and developing countries around the world. Climate champions, organisations on the frontline of the climate crisis, are creating something extraordinary. A planet powered by low-carbon start-ups, bold green policies, liveable cities, better work and clean energy for all. We help these innovators attract investment and funding, build their networks, and create radical change. We do this because we believe in them, and their vision of a cleaner, fairer, healthier world.",
+                          user: User.where(current_role: 'Charity')[19]
+                         )
 
 employer_counter = 0
 3.times do
@@ -175,17 +176,121 @@ volunteer_counter = 0
   volunteer_counter += 1
 end
 
-charity_counter = 0
-40.times do
+hackney_events_addresses = ["25 Weymouth Terrace, London E2 8LT",
+                            "128 Hoxton St, London N1 6SH",
+                            "134 Columbia Rd, London E2 7RG",
+                            "130 Bethnal Green Rd, London E2 6DG",
+                            "39A Hoxton Square, London N1 6NN",
+                            "262 Hackney Rd, London E2 7SJ",
+                            "65 Balls Pond Rd, London N1 4BW",
+                            "141 De Beauvoir Rd, London N1 4DL",
+                            "111B Tottenham Rd, London N1 4EA",
+                            "192 Haggerston Rd, London E8 4JA",
+                            "3 Nursery Ln, London E2 8AU",
+                            "44 Appleby St, London E2 8EP",
+                            "84 Caroline Gardens, London E2 8AB",
+                            "92 Curtain Rd, London EC2A 3AA",
+                            "2 Dufferin St, London EC1Y 8PA",
+                            "12 Finsbury Square, London EC2A 1AS",
+                            "35 Bishops Square, Spital Square, London E1 6DY",
+                            "19 Widegate St, London E1 7HP",
+                            "1 Chaucer Gardens, London E1 8QF",
+                            "129 Leman St, London E1 8EY"
+                            ]
+
+west_events_addresses =  ["11C Cornwall Cres, London W11 1PH",
+                          "Walmer Courtyard, 225-227 Walmer Rd, London W11 4EY",
+                          "27 Hillgate Pl, London W8 7SL",
+                          "25 Bark Pl, London W2 4AT",
+                          "3a Ladbroke Terrace, London W11 3PG",
+                          "23 Penzance St, London W11 4QX",
+                          "28 Ruston Mews, London W11 1RB",
+                          "174 Kensington Park Rd, London W11 2ER",
+                          "35 Chepstow Villas, London W11 3DP",
+                          "3 Chepstow Villas, London W11 3EE",
+                          "21 Clanricarde Gardens, London W2 4JL",
+                          "21 Clanricarde Gardens, London W2 4JL",
+                          "6 Woodsford Square, London W14 8DP",
+                          "57 Palace Gardens Terrace, London W8 4RS",
+                          "20 Pembridge Villas, London W11 2SU",
+                          "26 Holland Park, London W11 3TD",
+                          "17 Bonchurch Rd, London W10 5SD",
+                          "14 Eynham Rd, London W12 0HA",
+                          "100 St Ervans Rd, London W10 5QY",
+                          "10 Dartmouth Cl, London W11 1DR"]
+
+event_names =  ["The Crucial Cause",
+                "Together We Fight",
+                "Donate to Others",
+                "Find a Fortune",
+                "Paws for the Cause",
+                "Cancer Research Charities",
+                "A Better life",
+                "Awareness Tournament",
+                "Clever Donations",
+                "Thank a Veteran",
+                "Bright Futures Fund",
+                "Fortune Found",
+                "Love Hands",
+                "Life of Giving",
+                "Dream It",
+                "Secret Family",
+                "Double Donation",
+                "Baby Buy, Buy, Buy",
+                "Support Those Who Serve",
+                "Bright Futures Education",
+                "Giving Hands",
+                "Smileys",
+                "Ignite helpers",
+                "Generous Hearts",
+                "Red and Blu cross",
+                "Charitable Change",
+                "Together for London",
+                "All For Love",
+                "Give a Little",
+                "Give for Good Donation",
+                "The Charity City",
+                "Crits for Bits",
+                "Fundraisers to Heaven",
+                "Service for Strength",
+                "Charity for Literacy",
+                "For a better tomorrow",
+                "Endless Battle",
+                "Angel Time",
+                "Home Sweeter Home",
+                "Distribute Love"
+                ]
+
+hackney_counter = 0
+hackney_name_counter = 0
+20.times do
   Event.create!(
-    event_name: Faker::Mountain.name,
-    address: Faker::Address.full_address,
+    event_name: event_names[hackney_name_counter],
+    address: hackney_events_addresses[hackney_counter],
     date: Faker::Date.forward(days: 2),
     start_time: Time.now,
     duration: (1..8).to_a.sample,
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    description: "Completing the relevant training and asking questions if you are uncertain about anything. Completing all duties assigned by the supervisor and reporting any issues immediately. Observing the rules and safety regulations of the organization while carrying out tasks. Arriving on time for duty and remaining professional in your interactions with all stakeholders. Making recommendations for improvement where feasible and appropriate. Communicating with the supervisor or relevant stakeholders when you are running late or unable to fulfill your duties.",
     number_positions: (1..10).to_a.sample,
     charity: Charity.all.sample
   )
-  charity_counter += 1
+  hackney_counter += 1
+  hackney_name_counter += 1
+end
+
+west_counter = 0
+west_name_counter = 20
+20.times do
+  Event.create!(
+    event_name: event_names[west_name_counter],
+    address: west_events_addresses[west_counter],
+    date: Faker::Date.forward(days: 2),
+    start_time: Faker::Time.forward(days: 2),
+    duration: (1..8).to_a.sample,
+    description: "Completing the relevant training and asking questions if you are uncertain about anything. Completing all duties assigned by the supervisor and reporting any issues immediately. Observing the rules and safety regulations of the organization while carrying out tasks. Arriving on time for duty and remaining professional in your interactions with all stakeholders. Making recommendations for improvement where feasible and appropriate. Communicating with the supervisor or relevant stakeholders when you are running late or unable to fulfill your duties.",
+    number_positions: (1..10).to_a.sample,
+    charity: Charity.all.sample
+  )
+  west_counter += 1
+  west_name_counter += 1
 end
