@@ -16,6 +16,13 @@ color: black;
   background-color: rgba(255, 87, 87, 0.6);
   border-radius: 10px;
   width: auto;
+  max-height: 60px;
   backdrop-filter: blur(1px);
   text-align: center;
+  overflow: hidden;
+}
+
+
+.card-link:hover {
+text-decoration: none;
 }

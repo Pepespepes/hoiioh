@@ -3,7 +3,7 @@
 
 <%# <h1>Welcome to HOIIOH</h1> %>
 
-<div class="map" style="width: 98%; height: 400px;"
+<div class="map" style="width: 96%; height: 400px;"
   data-controller="mapbox"
   data-mapbox-markers-value="<%= @markers.to_json %>"
   data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
@@ -12,40 +12,46 @@
 
 
 <div class="app">
-  <h3 class="carousel-card">Charity Category 1</h3>
+  <h3 class="carousel-card">Charity Shops</h3>
 
-  <ul class="hs full">
+  <ul class="hs full no-scrollbar">
     <% @events.first(10).each do |event| %>
     <li class="item"> <%= render partial: 'card', locals: {event: event} %> </li>
     <% end  %>
   </ul>
 
-  <h2>Charity Category 2</h2>
+  <h3 class="carousel-card">Animal Welfare</h3>
 
-   <ul class="hs full">
-    <li class="item">test</li>
-    <li class="item">test</li>
-    <li class="item">test</li>
-    <li class="item">test</li>
-    <li class="item">test</li>
+    <ul class="hs full no-scrollbar">
+    <% @events.first(10).each do |event| %>
+    <li class="item"> <%= render partial: 'card', locals: {event: event} %> </li>
+    <% end  %>
   </ul>
 
-   <h2>Charity Category 3</h2>
+   <h3 class="carousel-card">Human and Civil Rights</h3>
 
   <ul class="hs full no-scrollbar">
-    <li class="item">test</li>
-    <li class="item">test</li>
-    <li class="item">test</li>
-    <li class="item">test</li>
+    <% @events.first(10).each do |event| %>
+    <li class="item"> <%= render partial: 'card', locals: {event: event} %> </li>
+    <% end  %>
   </ul>
 
-   <h2>Charity Category 4</h2>
+
+   <h3 class="carousel-card">Sports</h3>
 
   <ul class="hs full no-scrollbar">
-    <li class="item">test</li>
-    <li class="item">test</li>
-    <li class="item">test</li>
-    <li class="item">test</li>
+    <% @events.first(10).each do |event| %>
+    <li class="item"> <%= render partial: 'card', locals: {event: event} %> </li>
+    <% end  %>
+  </ul>
+
+
+   <h3 class="carousel-card">Environment</h3>
+
+  <ul class="hs full no-scrollbar">
+    <% @events.first(10).each do |event| %>
+    <li class="item"> <%= render partial: 'card', locals: {event: event} %> </li>
+    <% end  %>
   </ul>
 
 </div>
