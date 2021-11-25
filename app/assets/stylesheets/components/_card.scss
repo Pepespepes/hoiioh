@@ -1,5 +1,21 @@
 .card-home {
   height: 300px;
   width: 200px;
-  background-color: aqua;
+  // background-color: aqua;
+}
+
+.card-text {
+text-align: justify;
+margin: 8px;
+color: black;
+}
+
+.card-title {
+  margin-top: -20px;
+  color: #fff;
+  background-color: rgba(255, 87, 87, 0.6);
+  border-radius: 10px;
+  width: auto;
+  backdrop-filter: blur(1px);
+  text-align: center;
 }
