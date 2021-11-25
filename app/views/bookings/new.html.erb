@@ -1,16 +1,45 @@
-
-
-<div class="booking-card container">
-<h1>Event Registration</h1>
-</div>
-
 <% img_url = "https://images.unsplash.com/photo-1578357078586-491adf1aa5ba?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8dm9sdW50ZWVyfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60" %>
 <div class="banner-img">
   <img src=<%= img_url %> alt="holding hands">
 </div>
+
+
+<div class="booking-card container">
+<h1>Event Registration</h1>
+<% console %>
+<div class="event-details">
+
+    <h3><%= @event.charity.charity_name %></h3>
+    <h5><%= @event.event_name %></h5>
+    <p><%= @event.address %></p>
+
+    <div class="event-timings">
+      <div class="event-timings-detail">
+        <h4>📅</h4>
+        <h4><%= @event.date.strftime("%d/%m/%Y") %></h4>
+      </div>
+      <div class="event-timings-detail">
+        <h4>⌚</h4>
+        <h4><%= @event.start_time.strftime("%H:%M") %></h4>
+      </div>
+      <div class="event-timings-detail">
+        <h4>⏳</h4>
+        <h4>
+          <% if @event.duration ==1 %>
+            <%= "#{@event.duration} hour" %>
+          <% else %>
+            <%= "#{@event.duration} hours" %>
+          <% end %>
+        </h4>
+      </div>
+    </div>
+    </div>
 <div>
-<%= simple_form_for [@event, @booking] do |f| %>
-<%= f.check_box :employer_associated, label: 'Are you joining this event through your company?' %>
-<%= f.submit 'Confirm Booking', class:"button" %>
-<% end %>
+  <%= simple_form_for [@event, @booking] do |f| %>
+
+      <label for="booking[employer_associated]">Check the box if you are attending this event through your company.</label>
+      <%= f.check_box :employer_associated %>
+
+    <%= f.submit 'Confirm Booking', class:"button" %>
+  <% end %>
 </div>
