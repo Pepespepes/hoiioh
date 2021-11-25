@@ -10,26 +10,35 @@
   <img src=<%= profile_avatar %> alt="Profile image" class='avatar-xlarge'>
 </div>
 
-<div class='profile-summary'>
+<div class='container profile-container'>
   <h3><%= current_user.volunteer.first_name %> <%= current_user.volunteer.last_name %></h3>
-  <h4>Your Details</h4>
-  <p><%= current_user.volunteer.description %></p>
-  <p><strong>Age: </strong><%= current_user.volunteer.age %> years old</p>
-  <p><strong>DBS Checked: </strong>You <%= current_user.volunteer.dbs_checked ? 'have' : 'do not have' %> a valid DBS certificate</p>
-  <p>
-    <% unless current_user.volunteer.employer_id == nil %>
-    <strong>Your associated employer ID: </strong><%= current_user.volunteer.employer_id %>
-    <% end %>
-  </p>
-</div>
 
-<div>
-  <h4>Your Volunteering Summary</h4>
-  <p>🙌 x volunteering events attended</p>
-  <p>⏱ x number of hours volunteered</p>
-</div>
+  <div class='profile-vol-summary'>
+    <div class='summary-card'>
+      <p><span class='profile-number'>3</span><br>events attended<br><span class='profile-number'>🙌</span></p>
+    </div>
+    <div class='summary-card'>
+      <p><span class='profile-number'>15</span><br>hours volunteered<br><span class='profile-number'>🎉</span></p>
+    </div>
+  </div>
 
-<div>
-  <h4>Your reviews</h4>
-  <p>REVIEW REVIEW REVIEW REVIEW REVIEW REVIEW REVIEW REVIEW REVIEW REVIEW</p>
+  <div class='profile-summary'>
+    <p><%= current_user.volunteer.description %></p>
+    <p><strong>Age: </strong><%= current_user.volunteer.age %> years old</p>
+      <% if current_user.volunteer.dbs_checked %>
+        <p><strong>DBS Checked: </strong>You have a valid DBS certificate.</p>
+      <% else %>
+        <p><strong>DBS Checked: </strong>You don't have a valid DBS certificate. <a href="https://www.gov.uk/request-copy-criminal-record">Click here</a> to apply for one.</p>
+      <% end %>
+
+      <% unless current_user.volunteer.employer_id == nil %>
+      <strong>Your associated employer ID: </strong><%= current_user.volunteer.employer_id %>
+      <% end %>
+    </p>
+  </div>
+
+  <div>
+    <h5>Your reviews</h5>
+    <p>REVIEW REVIEW REVIEW REVIEW REVIEW REVIEW REVIEW REVIEW REVIEW REVIEW</p>
+  </div>
 </div>
