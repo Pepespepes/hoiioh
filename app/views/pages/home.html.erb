@@ -4,8 +4,6 @@
 <%# <h1>Welcome to HOIIOH</h1> %>
 
 
-
-
 <div class="app">
   <div class="mapbox-container">
     <div class="map" id="map-size" style="width: 96%; height: 400px;"
@@ -16,46 +14,39 @@
   </div>
 
 
-  <h3 class="carousel-card">Charity Shops</h3>
-
+  <h3 class="carousel-card">Human Welfare</h3>
   <ul class="hs full no-scrollbar">
-    <% @events.first(10).each do |event| %>
-    <li class="item"> <%= render partial: 'card', locals: {event: event} %> </li>
-    <% end  %>
+    <% @human_welfare_category_events.each do |event| %>
+      <li class="item"> <%= render partial: 'card', locals: {event: event} %> </li>
+    <% end %>
   </ul>
 
   <h3 class="carousel-card">Animal Welfare</h3>
-
-    <ul class="hs full no-scrollbar">
-    <% @events.first(10).each do |event| %>
-    <li class="item"> <%= render partial: 'card', locals: {event: event} %> </li>
-    <% end  %>
+  <ul class="hs full no-scrollbar">
+    <% @animal_welfare_category_events.each do |event| %>
+      <li class="item"> <%= render partial: 'card', locals: {event: event} %> </li>
+    <% end %>
   </ul>
 
-   <h3 class="carousel-card">Human and Civil Rights</h3>
-
+  <h3 class="carousel-card">Environment</h3>
   <ul class="hs full no-scrollbar">
-    <% @events.first(10).each do |event| %>
-    <li class="item"> <%= render partial: 'card', locals: {event: event} %> </li>
-    <% end  %>
+    <% @environment_category_events.each do |event| %>
+      <li class="item"> <%= render partial: 'card', locals: {event: event} %> </li>
+    <% end %>
   </ul>
 
-
-   <h3 class="carousel-card">Sports</h3>
-
+  <h3 class="carousel-card">Sports</h3>
   <ul class="hs full no-scrollbar">
-    <% @events.first(10).each do |event| %>
-    <li class="item"> <%= render partial: 'card', locals: {event: event} %> </li>
-    <% end  %>
+    <% @sports_category_events.each do |event| %>
+      <li class="item"> <%= render partial: 'card', locals: {event: event} %> </li>
+    <% end %>
   </ul>
 
-
-   <h3 class="carousel-card">Environment</h3>
-
+  <h3 class="carousel-card">Charity Shops</h3>
   <ul class="hs full no-scrollbar">
-    <% @events.first(10).each do |event| %>
-    <li class="item"> <%= render partial: 'card', locals: {event: event} %> </li>
-    <% end  %>
+    <% @charity_shops_category_events.each do |event| %>
+      <li class="item"> <%= render partial: 'card', locals: {event: event} %> </li>
+    <% end %>
   </ul>
 
 </div>
