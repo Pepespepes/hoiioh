@@ -1,3 +1,8 @@
+.event-details {
+  margin-top: 16px;
+  margin-bottom: 8px;
+}
+
 .event-details p {
   color: #756a6a;
   font-size: 16px;
@@ -22,7 +27,8 @@
 
 .event-details .button {
   position: sticky;
-  bottom: 0;
+  bottom: 8px;
+  line-height: 1.8;
 }
 
 .event-timings {
@@ -35,7 +41,7 @@
 }
 
 .event-timings-detail {
-  background-color: rgba(255, 87, 87, 0.5);
+  background-color: rgba(255, 87, 87, 0.6);
   border-radius: 5px;
   text-align: center;
   width: 30%;
