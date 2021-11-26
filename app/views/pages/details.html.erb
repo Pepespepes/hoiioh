@@ -1,27 +1,28 @@
-<h1> Complete your <%= current_user.current_role.downcase %> profile</h1>
+<div class='container'>
+  <h1> Complete your <%= current_user.current_role.downcase %> profile</h1>
 
+  <% if current_user.current_role == "Charity" %>
+    <%= simple_form_for(@charity) do |f| %>
+      <%= f.input :charity_name %>
+      <%= f.input :category, as: :select, :collection => Charity::CATEGORIES, label: "Select the charity category" %>
+      <%= f.input :description %>
+      <%= f.submit :Submit, class: 'button' %>
+    <% end %>
+  <% elsif current_user.current_role == "Volunteer" %>
+    <%= simple_form_for(@volunteer) do |f| %>
+      <%= f.input :first_name %>
+      <%= f.input :last_name %>
+      <%= f.input :age %>
+      <%= f.input :dbs_checked, as: :boolean, label: "DBS Checked?" %>
+      <%= f.input :description %>
+      <%= f.association :employer, collection: Employer.order(:company_name), prompt: "Choose a company (optional)", label_method: :company_name %>
+      <%= f.submit :Submit, class: 'button' %>
+    <% end %>
+  <% elsif current_user.current_role == "Employer" %>
+    <%= simple_form_for(@employer) do |f| %>
+      <%= f.input :company_name %>
+      <%= f.submit :Submit, class: 'button' %>
+    <% end %>
 
-<% if current_user.current_role == "Charity" %>
-  <%= simple_form_for(@charity) do |f| %>
-    <%= f.input :charity_name %>
-    <%= f.input :category, as: :select, :collection => Charity::CATEGORIES, label: "Select the charity category" %>
-    <%= f.input :description %>
-    <%= f.submit :Submit, class: 'button' %>
   <% end %>
-<% elsif current_user.current_role == "Volunteer" %>
-  <%= simple_form_for(@volunteer) do |f| %>
-    <%= f.input :first_name %>
-    <%= f.input :last_name %>
-    <%= f.input :age %>
-    <%= f.input :dbs_checked, as: :boolean, label: "DBS Checked?" %>
-    <%= f.input :description %>
-    <%= f.association :employer, label: "Employer ID (optional)" %>
-    <%= f.submit :Submit, class: 'button' %>
-  <% end %>
-<% elsif current_user.current_role == "Employer" %>
-  <%= simple_form_for(@employer) do |f| %>
-    <%= f.input :company_name %>
-    <%= f.submit :Submit, class: 'button' %>
-  <% end %>
-
-<% end %>
+</div>
