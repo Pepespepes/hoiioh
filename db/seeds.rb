@@ -10,12 +10,13 @@
 
 require 'faker'
 
-Employer.destroy_all
-User.destroy_all
-Volunteer.destroy_all
-Charity.destroy_all
-Event.destroy_all
+
 Booking.destroy_all
+Event.destroy_all
+Volunteer.destroy_all
+Employer.destroy_all
+Charity.destroy_all
+User.destroy_all
 Review.destroy_all
 
 puts "Old seeds destroyed"
@@ -91,7 +92,7 @@ child_hope = Charity.create!(charity_name: 'Child Hope',
                              description: 'Every child has the right to a safe and secure childhood, but for many these rights are denied. Born into extreme poverty and violence, they are at high risk of exploitation and abuse. Our purpose is to draw out and build on the strengths of children and those around them to tackle injustice. Looking at root causes, such as poverty and inequality, we also focus on influencing the policies and systems that can and must be changed to enable children to thrive.',
                              user: User.where(current_role: 'Charity')[3]
                             )
-hackney_friends_of_the_earth = Charity.create!(charity_name: 'Hackney and Tower Hamlets Friends of the Earth',
+hackney_friends_of_the_earth = Charity.create!(charity_name: 'Friends of the Earth',
                              category: 'Environment',
                              description: 'We are part of an international community dedicated to protecting the natural world and the wellbeing of everyone in it. We lead campaigns, provide resources and information, and drive real solutions to the environmental problems facing us all.',
                              user: User.where(current_role: 'Charity')[4]
