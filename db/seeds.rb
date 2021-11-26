@@ -10,12 +10,12 @@
 
 require 'faker'
 
-Employer.destroy_all
-User.destroy_all
-Volunteer.destroy_all
-Charity.destroy_all
-Event.destroy_all
 Booking.destroy_all
+Event.destroy_all
+Volunteer.destroy_all
+Employer.destroy_all
+Charity.destroy_all
+User.destroy_all
 Review.destroy_all
 
 
@@ -268,8 +268,8 @@ hackney_name_counter = 0
     event_name: event_names[hackney_name_counter],
     address: hackney_events_addresses[hackney_counter],
     date: Faker::Date.forward(days: 2),
-    start_time: Time.now,
     duration: (1..8).to_a.sample,
+    start_time: Time.now + rand(86400000),
     description: "Completing the relevant training and asking questions if you are uncertain about anything. Completing all duties assigned by the supervisor and reporting any issues immediately. Observing the rules and safety regulations of the organization while carrying out tasks. Arriving on time for duty and remaining professional in your interactions with all stakeholders. Making recommendations for improvement where feasible and appropriate. Communicating with the supervisor or relevant stakeholders when you are running late or unable to fulfill your duties.",
     number_positions: (1..10).to_a.sample,
     charity: Charity.all.sample
@@ -280,12 +280,13 @@ end
 
 west_counter = 0
 west_name_counter = 20
+
 20.times do
   Event.create!(
     event_name: event_names[west_name_counter],
     address: west_events_addresses[west_counter],
     date: Faker::Date.forward(days: 2),
-    start_time: Faker::Time.forward(days: 2),
+    start_time: Time.now + rand(86400000),
     duration: (1..8).to_a.sample,
     description: "Completing the relevant training and asking questions if you are uncertain about anything. Completing all duties assigned by the supervisor and reporting any issues immediately. Observing the rules and safety regulations of the organization while carrying out tasks. Arriving on time for duty and remaining professional in your interactions with all stakeholders. Making recommendations for improvement where feasible and appropriate. Communicating with the supervisor or relevant stakeholders when you are running late or unable to fulfill your duties.",
     number_positions: (1..10).to_a.sample,
