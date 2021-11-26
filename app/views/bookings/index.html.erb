@@ -1,5 +1,6 @@
 <div class="container">
-  <h1>My Events</h1> <br>
+  <div class="app">
+  <h3 class="carousel-card">Event Registration</h3>
   <% if (current_user.volunteer != nil) && (current_user.volunteer.bookings.empty?) %>
     <h4>Oh no, you are not registered to any events at the moment!🥺 </h4>
     <a href="/events">Click here</a> <h4> to have a look at more events. </h4>
@@ -7,12 +8,14 @@
     <% current_user.volunteer.bookings.each do |booking| %>
      <div class='event-booking-card'>
   <h6 class="booking-index-date"><%= booking.event.date.strftime("%d/%m/%Y") %></h6>
-    <p> <%= booking.event.charity.charity_name %></p>
-    <p> <%= booking.event.start_time.strftime("%H:%M")%></p>
-    <p> <%= booking.event.address %></p>
+    <p>🎗️<%= booking.event.charity.charity_name %></p>
+    <p>⏰ <%= booking.event.start_time.strftime("%H:%M")%></p>
+    <p>📍<%= booking.event.address %></p>
     <% if booking.event.date < Time.now %>
   <% end %>
   </div>
   <% end %>
   <% end %>
+</div>
+</div>
 </div>
