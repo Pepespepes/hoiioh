@@ -6,14 +6,14 @@
     <a href="/events">Click here</a> <h4> to have a look at more events. </h4>
   <% elsif (current_user.volunteer != nil) %>
     <div class="booking-title">
-    <h5> Upcoming Bookings </h5>
+      <h5> Upcoming Bookings </h5>
     </div>
     <% @upcoming_bookings.each do |booking| %>
       <div class='event-booking-card'>
         <h6 class="booking-index-date"><%= booking.event.date.strftime("%d/%m/%Y") %></h6>
-        <p>🎗️<%= booking.event.charity.charity_name %></p>
+        <p>🎗️ <%= booking.event.charity.charity_name %></p>
         <p>⏰ <%= booking.event.start_time.strftime("%H:%M")%></p>
-        <p>📍<%= booking.event.address %></p>
+        <p>📍 <%= booking.event.address %></p>
       </div>
     <% end %>
     <div class="booking-title">
