@@ -11,15 +11,20 @@
 }
 
 .navbar-brand {
-  border-color: white;
+  background-color: white;
+  object-fit: cover;
+  border-radius: 3px;
+  height: 40px;
 }
 
 .navbar-lewagon .navbar-collapse {
-  flex-grow: 0;
+  flex-grow: 1;
 }
 
 .navbar-lewagon .navbar-brand img {
   width: 40px;
+  margin-top: -5px;
+
 }
 // .natbar-toggler {
 //   border-radius: 50% !important;
@@ -30,6 +35,7 @@
 }
 
 .main-heading {
+  text-align: center;
   font-family: "Ubuntu", "sans-serif";
   font-weight: bold;
   color: #fff;
@@ -38,5 +44,4 @@
   margin-bottom: 0px;
   padding-left: 10px;
   padding-right: 10px;
-  text-align: center;
 }
