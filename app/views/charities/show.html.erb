@@ -1,0 +1,42 @@
+<% img_url = "https://images.unsplash.com/photo-1513477967668-2aaf11838bd6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8N3x8dm9sdW50ZWVyfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=1100&q=60" %>
+
+<div class="banner-img">
+  <img src=<%= img_url %> alt="holding hands">
+</div>
+
+<div class="container">
+
+  <div class="charity-details">
+    <h3><%= @charity.charity_name %></h3>
+    <h5><%= @charity.category %></h5>
+
+    <div class="about-us">
+      <h5>About Us</h5>
+      <ul>
+        <% description = @charity.description.split(".") %>
+        <% description.each do |sentence| %>
+          <li><%= sentence %></li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+
+  <%# <h5>Our volunteering opportunities</h5>
+  <div class="app">
+    <ul class="hs full no-scrollbar">
+
+      <div class="card-home">
+        <% @charity.events.each do |event| %>
+          <%# <div class=card-text> %>
+              <%# <%= event.event_name %>
+              <%# <%= event.date %>
+              <%# <%= event.start_time %>
+              <%# <%= event.address %>
+          <%# </div> %>
+        <%# <% end  %>
+      <%# </div> %>
+    <%# </ul> %>
+  <%# </div> %>
+
+
+</div>
