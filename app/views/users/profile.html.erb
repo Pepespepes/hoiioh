@@ -1,5 +1,5 @@
 <% banner_img = 'https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80' %>
-<% profile_avatar = 'https://images.unsplash.com/photo-1607990281513-2c110a25bd8c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1234&q=80' %>
+<% profile_avatar = 'https://ca.slack-edge.com/T02NE0241-U02GC8TRES1-ad9e707bafc0-192' %>
 
 
 <div class='banner-img'>
@@ -32,13 +32,13 @@
       <% end %>
 
       <% unless current_user.volunteer.employer_id == nil %>
-      <strong>Your associated employer ID: </strong><%= current_user.volunteer.employer_id %>
+      <strong>Employer name: </strong><%= current_user.volunteer.employer.company_name %>
       <% end %>
     </p>
   </div>
 
   <div>
     <h5>Your reviews</h5>
-    <p>REVIEW REVIEW REVIEW REVIEW REVIEW REVIEW REVIEW REVIEW REVIEW REVIEW</p>
+    <p>You don't have any reviews yet.</p>
   </div>
 </div>

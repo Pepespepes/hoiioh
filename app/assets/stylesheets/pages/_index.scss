@@ -6,4 +6,13 @@
 
 a {
   color: rgba(255, 87, 87, 1);
+  text-decoration: none;
+}
+
+a:link {
+  text-decoration: none;
+}
+
+a:hover {
+  color: rgb(180, 63, 63);
 }
