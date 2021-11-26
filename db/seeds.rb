@@ -18,11 +18,30 @@ Event.destroy_all
 Booking.destroy_all
 Review.destroy_all
 
+puts "Old seeds destroyed"
 
 # DEMO USER - EMPLOYER
-emma_user = User.create!(email: "emma123@gmail.com", password: '123123', current_role: 'Employer')
+katy_user = User.create!(email: "emma123@gmail.com", password: '123123', current_role: 'Employer')
+
+Employer.create!(
+  company_name: Faker::Company.name,
+  user: katy_user
+)
+
 # DEMO USER - VOLUNTEER
 pepe_user = User.create!(email: "pepe.pepe@gmail.com", password: '123123', current_role: 'Volunteer')
+
+pepe_volunteer = Volunteer.create!(
+                    first_name: 'Pepe',
+                    last_name: 'Baena',
+                    employer: Employer.all.sample,
+                    description: 'I like helping and volunteering and dedicate a bit of time to the causes that are closer to my heart. Specially those that involve people and animals. Issues of human rights and identity are also quite dear to me and often support those causes too. I believe that in order to change the environment you live in, you need to change yourself first, and by helping others when I can I hope I will be living in a more humane and better world.',
+                    age: (18..80).to_a.sample,
+                    dbs_checked: false,
+                    user: pepe_user
+                  )
+
+puts "Demo users created"
 
 # OTHER USERS
 20.times do
@@ -48,6 +67,8 @@ end
     current_role: 'Employer'
   )
 end
+
+puts "Users created"
 
 # CHARITIES
 food_cycle = Charity.create!(charity_name: 'FoodCycle Hackney',
@@ -153,8 +174,11 @@ ashden = Charity.create!(charity_name: 'Ashden',
                           user: User.where(current_role: 'Charity')[19]
                          )
 
-employer_counter = 0
-3.times do
+puts "Charities created"
+
+# EMPLOYERS
+employer_counter = 1
+2.times do
   Employer.create!(
     company_name: Faker::Company.name,
     user: User.where(current_role: 'Employer')[employer_counter]
@@ -162,7 +186,10 @@ employer_counter = 0
   employer_counter += 1
 end
 
-volunteer_counter = 0
+puts "Employers created"
+
+# VOLUNTEERS
+volunteer_counter = 1
 10.times do
   Volunteer.create!(
     first_name: Faker::Name.unique.first_name,
@@ -176,6 +203,9 @@ volunteer_counter = 0
   volunteer_counter += 1
 end
 
+puts "Volunteers created"
+
+# ADDRESSES
 hackney_events_addresses = ["25 Weymouth Terrace, London E2 8LT",
                             "128 Hoxton St, London N1 6SH",
                             "134 Columbia Rd, London E2 7RG",
@@ -194,7 +224,7 @@ hackney_events_addresses = ["25 Weymouth Terrace, London E2 8LT",
                             "12 Finsbury Square, London EC2A 1AS",
                             "35 Bishops Square, Spital Square, London E1 6DY",
                             "19 Widegate St, London E1 7HP",
-                            "1 Chaucer Gardens, London E1 8QF",
+                            "23 Dunmore Point, London E2 7LX",
                             "129 Leman St, London E1 8EY"
                             ]
 
@@ -208,7 +238,7 @@ west_events_addresses =  ["11C Cornwall Cres, London W11 1PH",
                           "174 Kensington Park Rd, London W11 2ER",
                           "35 Chepstow Villas, London W11 3DP",
                           "3 Chepstow Villas, London W11 3EE",
-                          "21 Clanricarde Gardens, London W2 4JL",
+                          "28 Dawson Pl, London W2 4TJ",
                           "21 Clanricarde Gardens, London W2 4JL",
                           "6 Woodsford Square, London W14 8DP",
                           "57 Palace Gardens Terrace, London W8 4RS",
@@ -219,6 +249,7 @@ west_events_addresses =  ["11C Cornwall Cres, London W11 1PH",
                           "100 St Ervans Rd, London W10 5QY",
                           "10 Dartmouth Cl, London W11 1DR"]
 
+# EVENT NAMES
 event_names =  ["The Crucial Cause",
                 "Together We Fight",
                 "Donate to Others",
@@ -261,6 +292,7 @@ event_names =  ["The Crucial Cause",
                 "Distribute Love"
                 ]
 
+# EVENTS
 hackney_counter = 0
 hackney_name_counter = 0
 20.times do
@@ -294,3 +326,68 @@ west_name_counter = 20
   west_counter += 1
   west_name_counter += 1
 end
+
+# PEPE EVENTS AND BOOKINGS
+
+pepe_event_1 = Event.create!(
+  event_name: event_names[0],
+  address: west_events_addresses[2],
+  date: Date.new(2021, 11, 1),
+  start_time: Time.new(2021, 11, 1, 14, 0, 0),
+  duration: 5,
+  description: "Completing the relevant training and asking questions if you are uncertain about anything. Completing all duties assigned by the supervisor and reporting any issues immediately. Observing the rules and safety regulations of the organization while carrying out tasks. Arriving on time for duty and remaining professional in your interactions with all stakeholders. Making recommendations for improvement where feasible and appropriate. Communicating with the supervisor or relevant stakeholders when you are running late or unable to fulfill your duties.",
+  number_positions: (1..10).to_a.sample,
+  charity: Charity.all.sample
+)
+
+pepe_event_2 = Event.create!(
+  event_name: event_names[6],
+  address: hackney_events_addresses[5],
+  date: Date.new(2021, 11, 12),
+  start_time: Time.new(2021, 11, 12, 9, 0, 0),
+  duration: 4,
+  description: "Completing the relevant training and asking questions if you are uncertain about anything. Completing all duties assigned by the supervisor and reporting any issues immediately. Observing the rules and safety regulations of the organization while carrying out tasks. Arriving on time for duty and remaining professional in your interactions with all stakeholders. Making recommendations for improvement where feasible and appropriate. Communicating with the supervisor or relevant stakeholders when you are running late or unable to fulfill your duties.",
+  number_positions: (1..10).to_a.sample,
+  charity: Charity.all.sample
+)
+
+pepe_event_3 = Event.create!(
+  event_name: event_names[7],
+  address: hackney_events_addresses[7],
+  date: Date.new(2021, 11, 20),
+  start_time: Time.new(2021, 11, 20, 11, 0, 0),
+  duration: 6,
+  description: "Completing the relevant training and asking questions if you are uncertain about anything. Completing all duties assigned by the supervisor and reporting any issues immediately. Observing the rules and safety regulations of the organization while carrying out tasks. Arriving on time for duty and remaining professional in your interactions with all stakeholders. Making recommendations for improvement where feasible and appropriate. Communicating with the supervisor or relevant stakeholders when you are running late or unable to fulfill your duties.",
+  number_positions: (1..10).to_a.sample,
+  charity: Charity.all.sample
+)
+
+Booking.create!(
+  event: pepe_event_1,
+  volunteer: pepe_volunteer,
+  employer_associated: false
+)
+
+Booking.create!(
+  event: pepe_event_2,
+  volunteer: pepe_volunteer,
+  employer_associated: false
+)
+
+Booking.create!(
+  event: pepe_event_3,
+  volunteer: pepe_volunteer,
+  employer_associated: false
+)
+
+puts "Events and bookings created"
+
+# 45.times do
+#   Booking.create!(
+#     event: Event.all.sample,
+#     volunteer: Volunteer.all.sample,
+#     employer_associated: [true, false].sample
+#   )
+# end
+
+puts "You're fully seeded"
