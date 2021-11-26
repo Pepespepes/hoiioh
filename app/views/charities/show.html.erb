@@ -21,17 +21,22 @@
     </div>
   </div>
 
-  <div class="charity-events">
-    <h5>Our Volunteering Opportunties</h5>
-    <% @charity.events.all do |event| %>
-      <div class="event-card">
-        <h5><%= event.event_name %></h5>
-        <h5><%= event.date %></h5>
-        <h5><%= event.start_time %></h5>
-        <h5><%= event.address %></h5>
-      </div>
-    <% end %>
-  </div>
+  <%# <h5>Our volunteering opportunities</h5>
+  <div class="app">
+    <ul class="hs full no-scrollbar">
+
+      <div class="card-home">
+        <% @charity.events.each do |event| %>
+          <%# <div class=card-text> %>
+              <%# <%= event.event_name %>
+              <%# <%= event.date %>
+              <%# <%= event.start_time %>
+              <%# <%= event.address %>
+          <%# </div> %>
+        <%# <% end  %>
+      <%# </div> %>
+    <%# </ul> %>
+  <%# </div> %>
 
 
 </div>
