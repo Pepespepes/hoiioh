@@ -4,10 +4,35 @@
   // background-color: aqua;
 }
 
+.card-home .address {
+  color: #756a6a;
+}
+
+.card-home p {
+  margin-top: 0;
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+
+.card-home h5 {
+  font-size: 16px;
+}
+
+.card-home .card-image {
+  width: 100%;
+  height: 33%;
+}
+
 .card-text {
-text-align: justify;
+// text-align: justify;
 margin: 8px;
 color: black;
+}
+
+.card-home .timings {
+  display: flex;
+  justify-content: space-between;
+  margin-right: 12px;
 }
 
 .card-title {
