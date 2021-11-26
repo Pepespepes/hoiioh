@@ -2,17 +2,20 @@
 <p>Find me in app/views/pages/home.html.erb</p> %>
 
 <%# <h1>Welcome to HOIIOH</h1> %>
-<div class="mapbox-container">
-  <div class="map" id="map-size" style="width: 96%; height: 400px;"
-    data-controller="mapbox"
-    data-mapbox-markers-value="<%= @markers.to_json %>"
-    data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
-  </div>
-</div>
+
 
 
 
 <div class="app">
+  <div class="mapbox-container">
+    <div class="map" id="map-size" style="width: 96%; height: 400px;"
+      data-controller="mapbox"
+      data-mapbox-markers-value="<%= @markers.to_json %>"
+      data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+    </div>
+  </div>
+
+
   <h3 class="carousel-card">Charity Shops</h3>
 
   <ul class="hs full no-scrollbar">
