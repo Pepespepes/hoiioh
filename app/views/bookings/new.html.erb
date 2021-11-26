@@ -4,9 +4,9 @@
 </div>
 
 
-<div class="booking-card container">
-<h1>Event Registration</h1>
-<% console %>
+<div class="app">
+  <h3 class="carousel-card">Event Registration</h3>
+
 <div class="event-details">
 
     <h3><%= @event.charity.charity_name %></h3>
@@ -37,8 +37,8 @@
 <div>
   <%= simple_form_for [@event, @booking] do |f| %>
 
-      <label for="booking[employer_associated]">Check the box if you are attending this event through your company.</label>
-      <%= f.check_box :employer_associated %>
+<label for="booking[employer_associated]">Check the box if you are attending this event through your company.</label><%= f.check_box :employer_associated %>
+
 
     <%= f.submit 'Confirm Booking', class:"button" %>
   <% end %>

@@ -11,6 +11,10 @@
 }
 
 input.button {
-  position: sticky;
-  bottom: 0;
+position:absolute;
+left:0%;
+right:20%;
+bottom: 10px;
+height: 40px;
+line-height: 1.8;
 }
