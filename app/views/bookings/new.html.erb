@@ -42,6 +42,13 @@
   <span class='checkbox-element checkbox-element-box'><%= f.check_box :employer_associated %></span><span class='checkbox-element'> <label for="booking[employer_associated]">Check the box if you are attending this event through your company.</label></span>
 </div>
 
+  <br>
+  <br>
+  <br>
+  <%= link_to :back do %>
+      <i class="fas fa-chevron-left"></i>
+  <% end %>
+
 
     <%= f.submit 'Confirm Booking', class:"button" %>
   <% end %>
