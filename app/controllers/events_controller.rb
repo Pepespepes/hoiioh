@@ -29,7 +29,9 @@ class EventsController < ApplicationController
     @sports_category_events = []
     @sports_charities.each do |charity|
       charity.events.each do |event|
+      if event.date >= DateTime.now
         @sports_category_events << event
+      end
       end
     end
 
@@ -37,7 +39,9 @@ class EventsController < ApplicationController
     @human_welfare_category_events = []
     @human_welfare_charities.each do |charity|
       charity.events.each do |event|
+      if event.date >= DateTime.now
         @human_welfare_category_events << event
+      end
       end
     end
 
@@ -45,7 +49,9 @@ class EventsController < ApplicationController
     @animal_welfare_category_events = []
     @animal_welfare_charities.each do |charity|
       charity.events.each do |event|
-        @animal_welfare_category_events << event
+        if event.date >= DateTime.now
+          @animal_welfare_category_events << event
+        end
       end
     end
 
@@ -53,7 +59,9 @@ class EventsController < ApplicationController
     @environment_category_events = []
     @environment_charities.each do |charity|
       charity.events.each do |event|
-        @environment_category_events << event
+        if event.date >= DateTime.now
+          @environment_category_events << event
+        end
       end
     end
 
@@ -61,7 +69,9 @@ class EventsController < ApplicationController
     @charity_shops_category_events = []
     @charity_shops_charities.each do |charity|
       charity.events.each do |event|
-        @charity_shops_category_events << event
+        if event.date >= DateTime.now
+          @charity_shops_category_events << event
+        end
       end
     end
   end
