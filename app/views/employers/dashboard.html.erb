@@ -1,0 +1,76 @@
+<% profile_avatar = 'https://ca.slack-edge.com/T02NE0241-U02GC8TRES1-ad9e707bafc0-192' %>
+
+<div class="dashboard">
+  <div id="dashboard-banner", style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1483058712412-4245e9b90334?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80);">
+    <div id="company-name">
+      <h5><%= @employer.company_name %></h5>
+    </div>
+    <div id="csr">
+      <h3>CSR Dashboard <%= Time.now.strftime("%Y") %>  </h3>
+    </div>
+  </div>
+
+
+  <div class='employer-vol-summary'>
+    <div class='employer-summary-card'>
+      <h5><%= @employees.count %> employees enrolled</h5>
+      <h5>👩</h5>
+    </div>
+    <div class='employer-summary-card'>
+      <h5><%= @bookings.count %> events attended by employees</h5>
+      <h5>🎉</h5>
+    </div>
+    <div class='employer-summary-card'>
+      <h5><%= @hours.sum %> hours volunteered</h5>
+      <h5>🙌</h5>
+    </div>
+  </div>
+
+    <div class="tabs">
+      <div class="tab">
+        <button class="tablinks">Employee view</button>
+      </div>
+      <div class="tab">
+        <button class="tablinks">Charity view</button>
+      </div>
+    </div>
+
+    <div class="container">
+
+      <div class="employee-cards tabcontent" id="Employee">
+        <% @employees.each do |employee| %>
+          <div class="card-employee">
+            <div class="card-employee-name">
+              <h5><%= employee.first_name %> <%= employee.last_name %></h5>
+            </div>
+            <div class="card-employee-infos">
+              <% bookings = employee.bookings.select { |booking| booking.event.date < Time.now } %>
+              <% hours = bookings.map { |booking| booking.event.duration } %>
+              <p>🎉 <%= bookings.count %> events attended</p>
+              <p>🙌 <%= hours.sum %> hours volunteered</p>
+            </div>
+          </div>
+        <% end %>
+      </div>
+
+      <div class="employee-cards tabcontent" id="charity">
+        <h5>REMOVE ONCE TABS WORK - DIVIDER FOR CHARITY VIEW</h5>
+        <% Charity::CATEGORIES.each do |categ| %>
+          <div class="card-employee">
+            <div class="card-employee-name">
+              <h5><%= categ %></h5>
+            </div>
+            <div class="card-employee-infos">
+              <% category_bookings = @bookings.select { |booking| booking.event.charity.category == categ } %>
+              <% cateogry_hours = category_bookings.map { |booking| booking.event.duration } %>
+              <p>🎉 <%= category_bookings.count %> events attended</p>
+              <p>🙌 <%= cateogry_hours.sum %> hours volunteered</p>
+            </div>
+          </div>
+        <% end %>
+
+      </div>
+
+    </div>
+
+</div>
