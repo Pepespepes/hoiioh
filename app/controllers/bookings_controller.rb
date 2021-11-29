@@ -21,10 +21,10 @@ class BookingsController < ApplicationController
     @bookings = Booking.all
     @bookings = current_user.volunteer.bookings
     @upcoming_bookings = @bookings.select do |booking|
-      booking.event.date > Date.today || (booking.event.date == Date.today && booking.event.start_time > Time.now.hour)
+      booking.event.date > Date.today || (booking.event.date == Date.today && booking.event.start_time > Time.now)
     end
     @past_bookings = @bookings.select do |booking|
-      booking.event.date < Date.today || (booking.event.date == Date.today && booking.event.start_time < Time.now.hour)
+      booking.event.date < Date.today || (booking.event.date == Date.today && booking.event.start_time < Time.now)
     end
   end
 

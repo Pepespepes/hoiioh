@@ -8,6 +8,7 @@ class User < ApplicationRecord
   has_one :charity
   has_one :volunteer
   has_one :employer
+  has_many :invitations
 
   validates :current_role, presence: true
 end
