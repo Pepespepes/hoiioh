@@ -46,7 +46,7 @@ export default class extends Controller {
   // 'app/assets/images/MapMarker.png'
 
 
-  //addmarkers to map here
+  // addmarkers to map here
   // _addMarkersToMap() {
   //   this.markersValue.forEach((marker) => {
   //     const popup = new mapboxgl.Popup().setHTML(marker.info_window);
@@ -70,16 +70,15 @@ export default class extends Controller {
   // 'app/assets/images/MapMarker.png'
 
 
-  // addmarkers to map here
-  _addMarkersToMap() {
-     console.log("hello")
-    console.log(this.markersValue)
-    this.markersValue.forEach((marker) => {
-      new mapboxgl.Marker()
-        .setLngLat([marker.lng, marker.lat])
-        .addTo(this.map);
-    });
-  }
+  // _addMarkersToMap() {
+  //    console.log("hello")
+  //   console.log(this.markersValue)
+  //   this.markersValue.forEach((marker) => {
+  //     new mapboxgl.Marker()
+  //       .setLngLat([marker.lng, marker.lat])
+  //       .addTo(this.map);
+  //   });
+  // }
   _fitMapToMarkers() {
     const bounds = new mapboxgl.LngLatBounds();
     this.markersValue.forEach(marker => bounds.extend([marker.lng, marker.lat]));
