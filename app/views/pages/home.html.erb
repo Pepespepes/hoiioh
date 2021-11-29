@@ -1,55 +1,23 @@
-<%# <h1 class="main">Charity shops</h1>
-<p>Find me in app/views/pages/home.html.erb</p> %>
+<div class="homepage-container">
 
-<%# <h1>Welcome to HOIIOH</h1> %>
+  <%= video_tag "homepagevid.mp4", autoplay: :autoplay, loop: :loop, muted: :muted, class: "home_video" %>
 
-<div class="app">
-  <div class="mapbox-container">
-    <div class="map" id="map-size" style="width: 96%; height: 400px;"
-      data-controller="mapbox"
-      data-mapbox-markers-value="<%= @markers.to_json %>"
-      data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+  <div class="homepage-headers">
+    <h1>Volunteering near you</h1>
+  </div>
+
+  <div class="homepage-buttons-container">
+
+    <div class="homepage-button-container">
+      <a href="/events" class="homepage-button">See Events</a>
     </div>
+
+    <div class="homepage-button-container">
+      <a href="" class="homepage-button-invert">Register as a Volunteer</a>
+    </div>
+
   </div>
 
 
-  <h3 class="carousel-card">Human Welfare</h3>
-  <ul class="hs full no-scrollbar">
-    <% @human_welfare_category_events.each do |event| %>
-      <li class="item"> <%= render partial: 'card', locals: {event: event} %> </li>
-    <% end %>
-  </ul>
-
-  <h3 class="carousel-card">Animal Welfare</h3>
-  <ul class="hs full no-scrollbar">
-    <% @animal_welfare_category_events.each do |event| %>
-      <li class="item"> <%= render partial: 'card', locals: {event: event} %> </li>
-    <% end %>
-  </ul>
-
-  <h3 class="carousel-card">Environment</h3>
-  <ul class="hs full no-scrollbar">
-    <% @environment_category_events.each do |event| %>
-      <li class="item"> <%= render partial: 'card', locals: {event: event} %> </li>
-    <% end %>
-  </ul>
-
-  <h3 class="carousel-card">Sports</h3>
-  <ul class="hs full no-scrollbar">
-    <% @sports_category_events.each do |event| %>
-      <li class="item"> <%= render partial: 'card', locals: {event: event} %> </li>
-    <% end %>
-  </ul>
-
-  <h3 class="carousel-card">Charity Shops</h3>
-  <ul class="hs full no-scrollbar">
-    <% @charity_shops_category_events.each do |event| %>
-      <li class="item"> <%= render partial: 'card', locals: {event: event} %> </li>
-    <% end %>
-  </ul>
 
 </div>
-
-
-<%# <button type="button" class="button">Button</button>
-<button type="button" class="button" id="secondary">Button</button> %>
