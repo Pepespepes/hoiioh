@@ -58,7 +58,6 @@ class PagesController < ApplicationController
 
   end
 
-
   def details
     if current_user.current_role == "Volunteer"
       @volunteer = Volunteer.new
