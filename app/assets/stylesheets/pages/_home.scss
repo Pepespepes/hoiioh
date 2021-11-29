@@ -1,5 +1,16 @@
 // Specific CSS for your home-pag
 
+.homepage-title {
+  margin-top: 16px;
+  margin-bottom: -16px;
+  color: rgba(255, 87, 87, 1);
+  padding-top: 20px;
+}
+
+.homepage-title h2 {
+  font-size: 20px;
+}
+
 .mapbox-container {
   width: 100%;
   display: flex;
@@ -20,5 +31,42 @@
   width: 100% !important;
 }
 
+// .homepage-container {
+//   height: 100vh;
+//   // background-image: linear-gradient(rgba(0, 0, 0, 0.2),rgba(0, 0, 0, 0.2)) , url("https://images.unsplash.com/photo-1493612276216-ee3925520721?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764&q=80");
+//   background-size: cover;
+//   background-repeat: no-repeat;
+//   width: 100%;
+//   background-position: center;
+// }
+
+.homepage-container video {
+  object-fit: cover;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.homepage-content {
+  margin-left: 20%;
+}
+
+.homepage-headers {
+  text-align: center;
+  padding-top: 10vh ;
+  color: white;
+}
+
+.homepage-button-container {
+  margin-top: 16px;
+  text-align: center;
+}
+
+.homepage-buttons-container {
+    margin-top: 55vh;
+  
 .mapboxgl-ctrl-geocoder--input {
 }
