@@ -10,7 +10,8 @@ class PagesController < ApplicationController
     @markers = @events.geocoded.map do |event|
       {
         lat: event.latitude,
-        lng: event.longitude
+        lng: event.longitude,
+        image_url: helpers.asset_url("MapMarker.png")
       }
     end
 
