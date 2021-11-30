@@ -10,17 +10,18 @@
   <img src=<%= profile_avatar %> alt="Profile image" class='avatar-xlarge'>
 </div>
 
-<div class='container profile-container'>
+<div class='container profile-container container-stretch'>
   <h3><%= current_user.volunteer.first_name %> <%= current_user.volunteer.last_name %></h3>
 
   <div class='profile-vol-summary'>
   <div class='summary-card'>
-      <p><span class='profile-number'><% if current_user.volunteer.dbs_checked %>
-        <p><strong>DBS Status </strong><br></p>
-        <p>Valid until 10/11/22.</p><br>
+      <p>
+      <%# <span class='profile-number'> %>
+      <strong>DBS Status </strong><br>
+      <% if current_user.volunteer.dbs_checked %>
+        Valid until 10/11/22.<br>
       <% else %>
-        <p><strong>DBS Status </strong><br></p>
-       No Certificate<br><a href="https://www.gov.uk/request-copy-criminal-record">Apply here</a></p>
+       <div class="dbs-p">No Certificate</div><a href="https://www.gov.uk/request-copy-criminal-record">Apply here</a>
       <% end %>
       </p>
     </div>
@@ -51,10 +52,10 @@
     <br>
     <br>
 
-    <div>
+    <%# <div>
       <h5>My reviews</h5>
       <p>You don't have any reviews yet.</p>
-    </div>
+    </div> %>
 
     <%= link_to root_path do %>
         <i class="fas fa-chevron-left"></i>
