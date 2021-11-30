@@ -36,7 +36,6 @@ background: #fff;
 }
 
 .homepage-button {
-  width: 50px;
   color: #fff;
   background-color: #ff5757;
   font-size: 22px;
@@ -44,13 +43,14 @@ background: #fff;
   font-family: Arial, Helvetica, sans-serif;
   font-weight: medium;
   text-align: center;
-  margin: 8px;
+  margin: 4px;
   padding: 8px;
   line-height: 1.45;
+  width: 50%;
+  border: none;
 }
 
 .homepage-button-invert {
-  width: 50px;
   background-color: #fff;
   color: #ff5757;
   font-size: 22px;
@@ -58,7 +58,20 @@ background: #fff;
   font-family: Arial, Helvetica, sans-serif;
   font-weight: medium;
   text-align: center;
-  margin-top: 8px;
+  margin-top: 4px;
+  margin-bottom: 16px;
   padding: 8px;
   line-height: 1.45;
+  width: 50%;
+  border: none;
+}
+
+.swal-button {
+  border: none;
+  padding: 8px 16px 8px 16px;
+  font-weight: normal;
+}
+
+.swal-button--confirm {
+  background-color: #ff5757;
 }
