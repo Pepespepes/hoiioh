@@ -47,7 +47,7 @@
   display: grid;
   grid-gap: 8px;
   grid-template-columns: 1fr 1fr 1fr;
-  height: 112px;
+  height: 96px;
   color: white;
   margin-left: 0px;
   margin-right: 15px;
@@ -100,7 +100,7 @@
 }
 
 .card-employee h5, .employer-vol-summary h5 {
-  font-size: 16px;
+  font-size: 14px;
   color: white;
 }
 
@@ -129,4 +129,9 @@
 .dashboard-subheading {
   padding-top: 16px;
   font-size: 18px;
+}
+
+.company-graph {
+  border-left: solid 1px rgba(255, 87, 87, 1);
+  margin-bottom: 8px;
 }
