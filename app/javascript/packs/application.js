@@ -18,7 +18,6 @@ import "bootstrap"
 
 
 document.addEventListener('turbolinks:load', () => {
-  console.log('hello');
   initSweetalert('#emergency-popup', {
     title: "URGENT HELP NEEDED",
     text: "Flooding in Paddington - volunteers needed urgently TODAY.",
