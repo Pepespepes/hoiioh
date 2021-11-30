@@ -36,7 +36,8 @@
 }
 
 .profile-vol-summary .summary-card {
-  padding: 8px;
+  padding: 4px;
+  margin: 8px;
   background-color: rgba(255, 87, 87, 0.5);
   border-radius: 5px;
   width: 48%;
@@ -45,6 +46,12 @@
 .summary-card p {
   margin-bottom: 0px;
 }
+.summary-card a {
+  background-color:rgba(255, 87, 87, 1);
+  color: white;
+  padding: 2px;
+  border-radius: 5px;
+};
 
 .profile-container h3 {
   text-align: center;
@@ -53,4 +60,9 @@
 
 .profile-number {
   font-size: larger;
+}
+
+.profile-summary {
+  padding: 16px 16px 0px;
+  text-align: justify;
 }
