@@ -9,7 +9,11 @@
   <div class="event-details">
 
     <h3><%= @event.event_name %></h3>
-    <h5><%= @event.charity.charity_name %></h5>
+    <h5><%= @event.charity.charity_name %>
+     <%= link_to charity_path(@event.charity) do %>
+     <i class="fas fa-info-circle "></i>
+     <% end %>
+     </h5>
     <p><%= @event.address %></p>
 
     <div class="event-timings">
@@ -34,9 +38,9 @@
     </div>
 
     <div class="charity-link">
-      <%= link_to "Find out more about #{@event.charity.charity_name}.", charity_path(@event.charity) %>
-    </div>
 
+    </div>
+<div class="list">
     <h5>Overview of responsibilites</h5>
     <ul>
       <% responsibilities = @event.description.split(".") %>
@@ -44,16 +48,17 @@
         <li><%= responsibility %></li>
       <% end %>
     </ul>
-
+</div>
     <h5>Reviews for <%= @event.charity.charity_name %></h5>
     <p>No reviews yet.</p>
 
     <%= link_to root_path do %>
       <i class="fas fa-chevron-left"></i>
     <% end %>
-
-    <div style="height:40px" class="button">
+    <div class="button-background">
+      <div style="height:40px" class="button">
       <%= link_to "Book now", new_event_booking_path(@event) %>
+      </div>
     </div>
 
   </div>
