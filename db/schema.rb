@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_25_105540) do
+ActiveRecord::Schema.define(version: 2021_11_29_164147) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -66,27 +66,26 @@ ActiveRecord::Schema.define(version: 2021_11_25_105540) do
   end
 
   create_table "invitations", force: :cascade do |t|
-    t.bigint "charity_id", null: false
-    t.bigint "volunteer_id", null: false
     t.bigint "chatroom_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["charity_id"], name: "index_invitations_on_charity_id"
+    t.bigint "inviter_id", null: false
+    t.bigint "user_id", null: false
+    t.string "status"
     t.index ["chatroom_id"], name: "index_invitations_on_chatroom_id"
-    t.index ["volunteer_id"], name: "index_invitations_on_volunteer_id"
+    t.index ["inviter_id"], name: "index_invitations_on_inviter_id"
+    t.index ["user_id"], name: "index_invitations_on_user_id"
   end
 
   create_table "messages", force: :cascade do |t|
     t.text "content"
     t.boolean "sent_by_charity"
-    t.bigint "charity_id", null: false
     t.bigint "chatroom_id", null: false
-    t.bigint "volunteer_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["charity_id"], name: "index_messages_on_charity_id"
+    t.bigint "user_id"
     t.index ["chatroom_id"], name: "index_messages_on_chatroom_id"
-    t.index ["volunteer_id"], name: "index_messages_on_volunteer_id"
+    t.index ["user_id"], name: "index_messages_on_user_id"
   end
 
   create_table "reviews", force: :cascade do |t|
@@ -131,12 +130,11 @@ ActiveRecord::Schema.define(version: 2021_11_25_105540) do
   add_foreign_key "charities", "users"
   add_foreign_key "employers", "users"
   add_foreign_key "events", "charities"
-  add_foreign_key "invitations", "charities"
   add_foreign_key "invitations", "chatrooms"
-  add_foreign_key "invitations", "volunteers"
-  add_foreign_key "messages", "charities"
+  add_foreign_key "invitations", "users"
+  add_foreign_key "invitations", "users", column: "inviter_id"
   add_foreign_key "messages", "chatrooms"
-  add_foreign_key "messages", "volunteers"
+  add_foreign_key "messages", "users"
   add_foreign_key "reviews", "bookings"
   add_foreign_key "volunteers", "employers"
   add_foreign_key "volunteers", "users"

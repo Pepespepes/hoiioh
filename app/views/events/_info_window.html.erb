@@ -1,0 +1,5 @@
+<h5><%= event.event_name %></h5>
+<p><%= event.charity.charity_name %></p>
+<p><%= event.address %></p>
+<%# <a class="button" id="infocard" href=" ">Go to event</a> %>
+<%= link_to "Go to event", event_path(event), class: "button", id: "infocard" %>

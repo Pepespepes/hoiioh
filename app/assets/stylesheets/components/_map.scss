@@ -1,0 +1,25 @@
+.mapboxgl-popup {
+  max-width: 200px;
+  opacity: 0.8;
+}
+
+.mapboxgl-popup-content {
+  text-align: center;
+  font-family: 'Ubuntu', sans-serif;
+  background-color: #ff5757;
+  color: white;
+}
+
+// .mapboxgl-popup-close {
+//   color: white;
+//   border: none;
+// }
+
+.mapboxgl-popup-close-button {
+  color: white;
+  border: none;
+}
+
+// .focus-visible-only:focus-visible {
+//   outline: 4px dashed darkorange;
+// }
