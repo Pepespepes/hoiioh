@@ -59,6 +59,11 @@
           </div>
         </div>
 
+        <h4 class="dashboard-subheading">Hours volunteered by charity category</h4>
+        <div class="company-graph">
+          <%= render partial: 'graph' %>
+        </div>
+
       </div>
 
 
@@ -82,25 +87,8 @@
 
       </div>
 
-      <%# <div class="employee-cards tabcontent" id="charity"> %>
-        <%# <% Charity::CATEGORIES.each do |categ| %>
-          <%# <div class="card-employee"> %>
-            <%# <div class="card-employee-name"> %>
-              <%# <h5><%= categ</h5> %>
-            <%# </div> %>
-            <%# <div class="card-employee-infos"> %>
-              <%# <% category_bookings = @bookings.select { |booking| booking.event.charity.category == categ } %>
-              <%# <% cateogry_hours = category_bookings.map { |booking| booking.event.duration } %>
-              <%# <p>🎉 <%= category_bookings.count events attended</p> %>
-              <%# <p>🙌 <%= cateogry_hours.sum hours volunteered</p> %>
-            <%# </div> %>
-          <%# </div> %>
-        <%# <% end %>
-      <%# </div> %>
-
     </div>
 
   </div>
-
 
 </div>
