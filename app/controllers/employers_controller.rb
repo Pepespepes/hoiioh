@@ -10,6 +10,24 @@ class EmployersController < ApplicationController
     end
   end
 
+  def dashboard
+    @employer = current_user.employer
+    @employees = Volunteer.where(employer: @employer)
+
+    @bookings = []
+    @hours = []
+    @employees.each do |employee|
+      employee.bookings.each do |booking|
+        @bookings << booking if booking.event.date < Time.now
+        @hours << booking.event.duration if booking.event.date < Time.now
+      end
+    end
+
+    @enrol_goal = 8
+    @events_goal = 24
+    @hours_goal = 50
+  end
+
   private
 
   def employer_params

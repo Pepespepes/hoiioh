@@ -1,0 +1,132 @@
+#dashboard-banner {
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+
+  @media(min-width: 600px) {
+      height: 40vh;
+  }
+
+  @media(max-width: 600px) {
+    height: 25vh;
+  }
+
+  @media(min-width: 950px) {
+    height: 50vh;
+  }
+}
+
+#company-name {
+  position: absolute;
+  top: 5%;
+  right: 8px;
+  color: white;
+}
+
+#company-name h5 {
+  font-size: 14px;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+
+#csr {
+  position: absolute;
+  top: 45%;
+  color: white;
+  width: 100%;
+}
+
+#csr h3 {
+  font-size: 26px;
+  text-align: center;
+  text-shadow: 1px 1px
+  3px rgba(0,0,0,0.2);
+}
+
+.employer-vol-summary {
+  display: grid;
+  grid-gap: 8px;
+  grid-template-columns: 1fr 1fr 1fr;
+  height: 112px;
+  color: white;
+  margin-left: 0px;
+  margin-right: 15px;
+}
+
+.employer-summary-card {
+  background-color: rgba(255, 87, 87, 0.8);
+  // width: 30%;
+  height: 100%;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 8px;
+}
+
+.employee-cards {
+  margin-bottom: 8px;
+  margin-top: 12px;
+  margin-right: 8px;
+  display: grid;
+  grid-gap: 8px;
+  grid-template-columns: 1fr 1fr 1fr;
+
+  @media(max-width: 992px) {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @media(max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.card-employee {
+  // width: 100%;
+  overflow: hidden;
+  height: 64px;
+  background: white;
+  display: flex;
+  align-items: center;
+  border-radius: 5px;
+  justify-content: center;
+}
+
+.dashboard p {
+  font-size: 12px;
+  margin: 4px;
+}
+
+.card-employee h5, .employer-vol-summary h5 {
+  font-size: 16px;
+  color: white;
+}
+
+.card-employee .card-employee-infos {
+  height: 100%;
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+}
+
+.card-employee .card-employee-name {
+  background-color: rgba(255, 87, 87, 0.8);
+  width: 40%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  text-align: center;
+}
+
+.dashboard-subheading {
+  padding-top: 16px;
+  font-size: 18px;
+}
