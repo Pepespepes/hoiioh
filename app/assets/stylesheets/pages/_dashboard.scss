@@ -44,22 +44,20 @@
 }
 
 .employer-vol-summary {
-  display: flex;
-  justify-content: space-between;
-  height: 136px;
-  margin-left: 8px;
-  margin-right: 8px;
-  margin-top: 16px;
-  margin-bottom: 30px;
+  display: grid;
+  grid-gap: 8px;
+  grid-template-columns: 1fr 1fr 1fr;
+  height: 112px;
   color: white;
+  margin-left: 0px;
+  margin-right: 15px;
 }
 
 .employer-summary-card {
-  background-color: rgba(255, 87, 87, 0.9);
-  width: 30%;
+  background-color: rgba(255, 87, 87, 0.8);
+  // width: 30%;
   height: 100%;
   border-radius: 5px;
-  margin: 4px 0px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -70,20 +68,23 @@
 
 .employee-cards {
   margin-bottom: 8px;
+  margin-top: 12px;
+  margin-right: 8px;
   display: grid;
-  grid-gap: 12px;
+  grid-gap: 8px;
   grid-template-columns: 1fr 1fr 1fr;
 
   @media(max-width: 992px) {
-  grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
   }
 
   @media(max-width: 768px) {
-  grid-template-columns: 1fr;
+    grid-template-columns: 1fr;
   }
 }
 
 .card-employee {
+  // width: 100%;
   overflow: hidden;
   height: 64px;
   background: white;
@@ -114,7 +115,7 @@
 }
 
 .card-employee .card-employee-name {
-  background-color: rgba(255, 87, 87, 0.6);
+  background-color: rgba(255, 87, 87, 0.8);
   width: 40%;
   height: 100%;
   display: flex;
@@ -122,4 +123,10 @@
   align-items: center;
   justify-content: center;
   padding: 8px;
+  text-align: center;
+}
+
+.dashboard-subheading {
+  padding-top: 16px;
+  font-size: 18px;
 }

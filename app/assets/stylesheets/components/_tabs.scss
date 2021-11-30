@@ -1,7 +1,8 @@
 .tabs {
   width: 100%;
   display: flex;
-  margin-bottom: 16px;
+  margin-top: 16px;
+  // margin-bottom: 8px;
 }
 
 .tab {
@@ -21,10 +22,14 @@
   line-height: 1.45;
 }
 
-.tablinks:hover {
-  background-color: white;
+.tablinks.inactive {
+  background-color: rgba(255, 87, 87, 0.1);
+  opacity: 50%;
 }
 
-// .tablinks button.active {
-//   background: white;
-// }
+.tabcontent {
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  width: 95vw;
+}

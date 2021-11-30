@@ -23,7 +23,9 @@ class EmployersController < ApplicationController
       end
     end
 
-    @category_bookings
+    @enrol_goal = 8
+    @events_goal = 24
+    @hours_goal = 50
   end
 
   private

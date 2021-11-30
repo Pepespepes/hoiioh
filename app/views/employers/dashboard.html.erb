@@ -10,67 +10,97 @@
     </div>
   </div>
 
-
-  <div class='employer-vol-summary'>
-    <div class='employer-summary-card'>
-      <h5><%= @employees.count %> employees enrolled</h5>
-      <h5>👩</h5>
-    </div>
-    <div class='employer-summary-card'>
-      <h5><%= @bookings.count %> events attended by employees</h5>
-      <h5>🎉</h5>
-    </div>
-    <div class='employer-summary-card'>
-      <h5><%= @hours.sum %> hours volunteered</h5>
-      <h5>🙌</h5>
-    </div>
-  </div>
-
-    <div class="tabs">
+  <div data-controller="swap-tabs">
+    <div class="tabs" >
       <div class="tab">
-        <button class="tablinks">Employee view</button>
+        <button class="tablinks" data-swap-tabs-target="tabcompany" data-action="click->swap-tabs#activateCompany">Company stats</button>
       </div>
       <div class="tab">
-        <button class="tablinks">Charity view</button>
+        <button class="tablinks inactive" data-swap-tabs-target="tabemployees" data-action="click->swap-tabs#activateEmployees">Employee stats</button>
       </div>
     </div>
 
     <div class="container">
 
-      <div class="employee-cards tabcontent" id="Employee">
-        <% @employees.each do |employee| %>
-          <div class="card-employee">
-            <div class="card-employee-name">
-              <h5><%= employee.first_name %> <%= employee.last_name %></h5>
-            </div>
-            <div class="card-employee-infos">
-              <% bookings = employee.bookings.select { |booking| booking.event.date < Time.now } %>
-              <% hours = bookings.map { |booking| booking.event.duration } %>
-              <p>🎉 <%= bookings.count %> events attended</p>
-              <p>🙌 <%= hours.sum %> hours volunteered</p>
-            </div>
+      <div data-swap-tabs-target="contentcompany" class="tabcontent">
+
+        <h4 class="dashboard-subheading">Achievements</h4>
+        <div class='employer-vol-summary'>
+          <div class='employer-summary-card'>
+            <h5><%= @employees.count %> employees enrolled</h5>
+            <h5>👩</h5>
           </div>
-        <% end %>
+          <div class='employer-summary-card'>
+            <h5><%= @bookings.count %> events attended by employees</h5>
+            <h5>🎉</h5>
+          </div>
+          <div class='employer-summary-card'>
+            <h5><%= @hours.sum %> hours volunteered</h5>
+            <h5>🙌</h5>
+          </div>
+        </div>
+
+        <h4 class="dashboard-subheading">Goals</h4>
+        <div class='employer-vol-summary'>
+          <div class='employer-summary-card'>
+            <h5><%= @enrol_goal %> employees</h5>
+            <h5>🏆</h5>
+            <h5><%= number_to_percentage((@employees.count)/@enrol_goal.to_f*100, precision:0) %> complete</h5>
+          </div>
+          <div class='employer-summary-card'>
+            <h5><%= @events_goal %> events</h5>
+            <h5>🏆</h5>
+            <h5><%= number_to_percentage((@bookings.count)/@events_goal.to_f*100, precision:0) %> complete</h5>
+          </div>
+          <div class='employer-summary-card'>
+            <h5><%= @hours_goal %> hours</h5>
+            <h5>🏆</h5>
+            <h5><%= number_to_percentage((@hours.count)/@hours_goal.to_f*100, precision:0) %> complete</h5>
+          </div>
+        </div>
+
       </div>
 
-      <div class="employee-cards tabcontent" id="charity">
-        <h5>REMOVE ONCE TABS WORK - DIVIDER FOR CHARITY VIEW</h5>
-        <% Charity::CATEGORIES.each do |categ| %>
-          <div class="card-employee">
-            <div class="card-employee-name">
-              <h5><%= categ %></h5>
+
+      <div data-swap-tabs-target="contentemployees" class="d-none">
+
+        <div class="employee-cards tabcontent" >
+          <% @employees.each do |employee| %>
+            <div class="card-employee">
+              <div class="card-employee-name">
+                <h5><%= employee.first_name %> <%= employee.last_name %></h5>
+              </div>
+              <div class="card-employee-infos">
+                <% bookings = employee.bookings.select { |booking| booking.event.date < Time.now } %>
+                <% hours = bookings.map { |booking| booking.event.duration } %>
+                <p>🎉 <%= bookings.count %> events attended</p>
+                <p>🙌 <%= hours.sum %> hours volunteered</p>
+              </div>
             </div>
-            <div class="card-employee-infos">
-              <% category_bookings = @bookings.select { |booking| booking.event.charity.category == categ } %>
-              <% cateogry_hours = category_bookings.map { |booking| booking.event.duration } %>
-              <p>🎉 <%= category_bookings.count %> events attended</p>
-              <p>🙌 <%= cateogry_hours.sum %> hours volunteered</p>
-            </div>
-          </div>
-        <% end %>
+          <% end %>
+        </div>
 
       </div>
+
+      <%# <div class="employee-cards tabcontent" id="charity"> %>
+        <%# <% Charity::CATEGORIES.each do |categ| %>
+          <%# <div class="card-employee"> %>
+            <%# <div class="card-employee-name"> %>
+              <%# <h5><%= categ</h5> %>
+            <%# </div> %>
+            <%# <div class="card-employee-infos"> %>
+              <%# <% category_bookings = @bookings.select { |booking| booking.event.charity.category == categ } %>
+              <%# <% cateogry_hours = category_bookings.map { |booking| booking.event.duration } %>
+              <%# <p>🎉 <%= category_bookings.count events attended</p> %>
+              <%# <p>🙌 <%= cateogry_hours.sum hours volunteered</p> %>
+            <%# </div> %>
+          <%# </div> %>
+        <%# <% end %>
+      <%# </div> %>
 
     </div>
+
+  </div>
+
 
 </div>
