@@ -8,10 +8,13 @@
     "@rails/ujs": "^6.0.0",
     "@rails/webpacker": "5.4.3",
     "bootstrap": "4.6",
+    "chart.js": "^3.6.0",
+    "chartkick": "^4.1.1",
     "jquery": "^3.6.0",
     "mapbox-gl": "^2.6.1",
     "popper.js": "^1.16.1",
     "stimulus": "^3.0.1",
+    "sweetalert": "^2.1.2",
     "turbolinks": "^5.2.0",
     "webpack": "^4.46.0",
     "webpack-cli": "^3.3.12"
