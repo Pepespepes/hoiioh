@@ -36,21 +36,19 @@
         </h4>
       </div>
     </div>
+</div>
 
     <div class="charity-link">
-
-    </div>
-<div class="list">
-    <h5>Overview of responsibilites</h5>
-    <ul>
-      <% responsibilities = @event.description.split(".") %>
-      <% responsibilities.each do |responsibility| %>
-        <li><%= responsibility %></li>
-      <% end %>
-    </ul>
-</div>
-    <h5>Reviews for <%= @event.charity.charity_name %></h5>
-    <p>No reviews yet.</p>
+      </div>
+        <div class="list">
+          <h5>Overview of responsibilites</h5>
+          <ul>
+            <% responsibilities = @event.description.split(".") %>
+            <% responsibilities.each do |responsibility| %>
+              <li><%= responsibility %></li>
+            <% end %>
+          </ul>
+        </div>
 
     <%= link_to root_path do %>
       <i class="fas fa-chevron-left"></i>

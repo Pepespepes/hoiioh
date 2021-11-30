@@ -1,21 +1,30 @@
 .event-details {
   margin-top: -8px;
   margin-bottom: 8px;
+  padding: 4px 8px 4px 8px;
   background-color: white;
+  border-radius: 10px;
 }
 
 .event-details p {
+  margin-left: 8px;
   color: #756a6a;
   font-size: 16px;
 }
 
 .event-details h3 {
+  margin-left: 8px;
   margin-top: 8px;
   padding-top: 16px;
 }
 
 .event-details h4 {
+  margin-left: 4px;
   font-size: 16px;
+}
+
+.event-details h5 {
+  margin-left: 8px;
 }
 
 .event-details ul {
@@ -68,5 +77,15 @@
 }
 
 .list {
-  padding: 4px ;
+  padding: 10px 8px 4px 8px;
+  background-color: white;
+  border-radius: 10px;
+}
+
+.list h5 {
+  margin-left: 8px;
+}
+
+.list li {
+  margin: 8px;
 }
