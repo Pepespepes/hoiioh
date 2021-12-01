@@ -1,17 +1,20 @@
 <div class="chatroom_container" data-controller="chat">
-    <div class="message-container" id="messages" data-chat-id="<%= @chatroom.id %>" data-user-id="<%= current_user.id %>">
+  <div class="chat-headers">
+    <h3>Chatroom</h3>
+  </div>
+  <div class="message-container" id="messages" data-chatroom-id="<%= @chatroom.id %>" data-user-id="<%= current_user.id %>">
     <% @chatroom.messages.each do |message| %>
       <%= render 'messages/message', message: message %>
     <% end %>
-    <div class="container__chatroom--input">
-      <%= simple_form_for [@chatroom, @message], remote: true do |f| %>
-        <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
-        <%= f.input :content,
-                    label: false,
-                    placeholder: "Type your message here.",
-                    html: { rows: 4 } %>
-          <%= f.submit %>
-      <% end %>
-    </div>
+  </div>
+  <div class="container__chatroom--input">
+    <%= simple_form_for [@chatroom, @message], remote: true do |f| %>
+      <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+      <%= f.input :content,
+                  label: false,
+                  placeholder: "Write your message here.",
+                  html: { rows: 4 } %>
+        <%= f.submit %>
+    <% end %>
   </div>
 </div>

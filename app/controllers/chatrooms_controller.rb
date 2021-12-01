@@ -1,6 +1,7 @@
 class ChatroomsController < ApplicationController
 
   def index
+    @chatrooms = Chatroom.all
     @current_user_invitations = Invitation.where("inviter_id = ? OR user_id = ?", current_user.id, current_user.id)
     @invitations = @current_user_invitations.reject { |invitation| invitation.inviter_id == invitation.user_id }
     @invitations.reject! { |invitation| invitation.status == 'declined' }
@@ -18,15 +19,15 @@ class ChatroomsController < ApplicationController
 
   def create
     @chatroom = Chatroom.new
-    @chatroom.active= true
+    @chatroom.active = true
     @invitation1 = Invitation.new(status: 'confirmed')
     @invitation1.user = current_user
     @invitation1.inviter = current_user
     @invitation1.chatroom = @chatroom
     redirect_to details_path unless @invitation1.save
 
-    @invitee = User.find(params[:user_id]) #this assumes you're on a users page
-    @invitation2 = Invitation.new(status: 'unconfirmed')
+    @invitee = User.find(params[:user_id])
+    @invitation2 = Invitation.new(status: 'confirmed') #change back to unconfirmed when accept/decline is implemented
     @invitation2.user = @invitee
     @invitation2.inviter = current_user
     @invitation2.chatroom = @chatroom
@@ -56,6 +57,6 @@ class ChatroomsController < ApplicationController
   private
 
   def chatroom_params
-    params.require(:chatroom).permit(:active)
+    params.require(:user).permit(:id)
   end
 end

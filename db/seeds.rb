@@ -16,6 +16,9 @@ Event.destroy_all
 Volunteer.destroy_all
 Employer.destroy_all
 Charity.destroy_all
+Message.destroy_all
+Invitation.destroy_all
+Chatroom.destroy_all
 User.destroy_all
 Review.destroy_all
 

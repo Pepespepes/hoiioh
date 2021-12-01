@@ -80,6 +80,7 @@ class EventsController < ApplicationController
 
   def show
     @event = Event.find(params[:id])
+    @user = @event.charity.user.id
   end
 
   def event_params

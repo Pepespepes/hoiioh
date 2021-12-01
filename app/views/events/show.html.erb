@@ -70,10 +70,11 @@
     </div>
   </div>
 
+    <div class="button-container">
+        <%= link_to "Chat now", user_chatrooms_path(@user),method:"post", class:"chat-button" %>
+  </div>
   <div class="button-background" id="book-now">
     <div style="height:40px" class="button">
       <%= link_to "Book now", new_event_booking_path(@event) %>
     </div>
   </div>
-
-</div>
