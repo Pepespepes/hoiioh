@@ -1,13 +1,19 @@
-<div class="container">
-  <div class="app">
-  <h3 class="carousel-card">Event Registration</h3>
+<div class="container booking-index-container">
+  <h3 class="carousel-card">Bookings</h3>
   <% if (current_user.volunteer != nil) && (current_user.volunteer.bookings.empty?) %>
-    <h5>Oh no, you are not registered to any events at the moment!🥺 </h5>
+    <h5>Oh no, you are not registered to any events at the moment!<i class="far fa-sad-tear icon-pink"></i>
+
+ </h5>
     <a href="/events">Click here</a> <h4> to have a look at more events. </h4>
   <% elsif (current_user.volunteer != nil) %>
     <div class="booking-title">
-      <h5> Upcoming Bookings </h5>
-    </div>
+      <h5>Upcoming</h5>
+      </div>
+      <div>
+        <% if @upcoming_bookings.empty? %>
+          <p>You don't have any upcoming bookings.</p>
+        <% end %>
+      </div>
     <% @upcoming_bookings.each do |booking| %>
       <div class='event-booking-card'>
         <h6 class="booking-index-date"><%= booking.event.date.strftime("%e %b %y") %></h6>
@@ -18,7 +24,7 @@
     <% end %>
 
     <div class="booking-title">
-    <h5> Past Bookings </h5>
+    <h5>Previous</h5>
     </div>
     <% @past_bookings.each do |booking| %>
       <div class='event-booking-card'>
@@ -29,6 +35,5 @@
       </div>
     <% end %>
   <% end %>
-</div>
 </div>
 </div>
