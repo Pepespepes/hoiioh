@@ -54,7 +54,7 @@
           <div class='employer-summary-card'>
             <h5><%= @hours_goal %> hours</h5>
             <i class="fas fa-award"></i>
-            <h5><%= number_to_percentage((@hours.count)/@hours_goal.to_f*100, precision:0) %> complete</h5>
+            <h5><%= number_to_percentage((@hours.sum)/@hours_goal.to_f*100, precision:0) %> complete</h5>
           </div>
         </div>
 
