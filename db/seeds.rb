@@ -1,15 +1,4 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
-
-# %w[Animal Human\ Services Children Health Education Environment]
-
 require 'faker'
-
 
 Booking.destroy_all
 Event.destroy_all
@@ -27,23 +16,23 @@ puts "Old seeds destroyed"
 # DEMO USER - EMPLOYER
 katy_user = User.create!(email: "emma@gmail.com", password: '123123', current_role: 'Employer')
 
-Employer.create!(
-  company_name: Faker::Company.name,
-  user: katy_user
-)
+katy_employer = Employer.create!(
+                  company_name: "Ultra Tech",
+                  user: katy_user
+                )
 
 # DEMO USER - VOLUNTEER
 pepe_user = User.create!(email: "pepe@gmail.com", password: '123123', current_role: 'Volunteer')
 
 pepe_volunteer = Volunteer.create!(
-                    first_name: 'Pepe',
-                    last_name: 'Baena',
-                    employer: Employer.all.sample,
-                    description:"I like helping and volunteering and dedicate a bit of time to the causes that are closer to my heart. Specially those that involve people and animals. Issues of human rights and identity are also quite dear to me and often support those causes too. I believe that in order to change the environment you live in, you need to change yourself first, and by helping others when I can I hope I will be living in a more humane and better world.",
-                    age: (18..80).to_a.sample,
-                    dbs_checked: false,
-                    user: pepe_user
-                  )
+                  first_name: 'Pepe',
+                  last_name: 'Baena',
+                  employer: katy_employer,
+                  description: "I like helping and volunteering and dedicate a bit of time to the causes that are closer to my heart. Especially those that involve people and animals. Issues of human rights and identity are also quite dear to me and often support those causes too. I believe that in order to change the environment you live in, you need to change yourself first, and by helping others when I can I hope I will be living in a more humane and better world.",
+                  age: (18..80).to_a.sample,
+                  dbs_checked: false,
+                  user: pepe_user
+                )
 
 puts "Demo users created"
 
@@ -193,12 +182,26 @@ end
 puts "Employers created"
 
 # VOLUNTEERS
-volunteer_counter = 1
-10.times do
+katy_volunteer_counter = 0
+4.times do
   Volunteer.create!(
     first_name: Faker::Name.unique.first_name,
     last_name: Faker::Name.unique.last_name,
-    employer: Employer.all.sample,
+    employer: katy_employer,
+    description: 'TO BE WRITTEN',
+    age: (18..80).to_a.sample,
+    dbs_checked: [true, false].sample,
+    user: User.where(current_role: 'Volunteer')[katy_volunteer_counter]
+  )
+  katy_volunteer_counter += 1
+end
+
+volunteer_counter = 1
+6.times do
+  Volunteer.create!(
+    first_name: Faker::Name.unique.first_name,
+    last_name: Faker::Name.unique.last_name,
+    employer: Employer.where.not(company_name: "Ultra Tech").sample,
     description: 'TO BE WRITTEN',
     age: (18..80).to_a.sample,
     dbs_checked: [true, false].sample,
@@ -259,9 +262,9 @@ event_names =  ["The Crucial Cause",
                 "Donate to Others",
                 "Find a Fortune",
                 "Paws for the Cause",
-                "Cancer Research Charities",
+                "Cancer Research",
                 "A Better life",
-                "Awareness Tournament",
+                "Awareness Games",
                 "Clever Donations",
                 "Thank a Veteran",
                 "Bright Futures Fund",
@@ -272,8 +275,8 @@ event_names =  ["The Crucial Cause",
                 "Secret Family",
                 "Double Donation",
                 "Baby Buy, Buy, Buy",
-                "Support Those Who Serve",
-                "Bright Futures Education",
+                "Support Others",
+                "Bright Futures",
                 "Giving Hands",
                 "Smileys",
                 "Ignite helpers",
@@ -283,16 +286,16 @@ event_names =  ["The Crucial Cause",
                 "Together for London",
                 "All For Love",
                 "Give a Little",
-                "Give for Good Donation",
+                "Give for Good",
                 "The Charity City",
                 "Crits for Bits",
-                "Fundraisers to Heaven",
+                "Heaven Fundraisers",
                 "Service for Strength",
                 "Charity for Literacy",
-                "For a better tomorrow",
+                "A better tomorrow",
                 "Endless Battle",
                 "Angel Time",
-                "Home Sweeter Home",
+                "Sweeter Home",
                 "Distribute Love"
                 ]
 
@@ -352,61 +355,99 @@ pepe_event_1 = Event.create!(
   event_name: event_names[0],
   address: west_events_addresses[2],
   date: Date.new(2021, 11, 1),
-  start_time: Time.new(2021, 11, 1, 14, 30, 0),
+  start_time: Time.new(2021, 11, 29, 14, 30, 0),
   duration: 5,
   description: "Completing the relevant training and asking questions if you are uncertain about anything. Completing all duties assigned by the supervisor and reporting any issues immediately. Observing the rules and safety regulations of the organization while carrying out tasks. Arriving on time for duty and remaining professional in your interactions with all stakeholders. Making recommendations for improvement where feasible and appropriate. Communicating with the supervisor or relevant stakeholders when you are running late or unable to fulfill your duties.",
   number_positions: (1..10).to_a.sample,
-  charity: Charity.all.sample
+  charity: the_drake_trust
 )
 
 pepe_event_2 = Event.create!(
   event_name: event_names[6],
   address: hackney_events_addresses[5],
   date: Date.new(2021, 11, 12),
-  start_time: Time.new(2021, 11, 12, 9, 0, 0),
+  start_time: Time.new(2021, 11, 18, 9, 0, 0),
   duration: 4,
   description: "Completing the relevant training and asking questions if you are uncertain about anything. Completing all duties assigned by the supervisor and reporting any issues immediately. Observing the rules and safety regulations of the organization while carrying out tasks. Arriving on time for duty and remaining professional in your interactions with all stakeholders. Making recommendations for improvement where feasible and appropriate. Communicating with the supervisor or relevant stakeholders when you are running late or unable to fulfill your duties.",
   number_positions: (1..10).to_a.sample,
-  charity: Charity.all.sample
+  charity: humane_society_international
 )
 
 pepe_event_3 = Event.create!(
   event_name: event_names[7],
   address: hackney_events_addresses[7],
-  date: Date.new(2021, 11, 20),
+  date: Date.new(2021, 11, 29),
   start_time: Time.new(2021, 11, 20, 11, 0, 0),
   duration: 6,
   description: "Completing the relevant training and asking questions if you are uncertain about anything. Completing all duties assigned by the supervisor and reporting any issues immediately. Observing the rules and safety regulations of the organization while carrying out tasks. Arriving on time for duty and remaining professional in your interactions with all stakeholders. Making recommendations for improvement where feasible and appropriate. Communicating with the supervisor or relevant stakeholders when you are running late or unable to fulfill your duties.",
   number_positions: (1..10).to_a.sample,
-  charity: Charity.all.sample
+  charity: the_conservation_foundation
+)
+
+sport_event = Event.create!(
+  event_name: "Double Donation",
+  address: hackney_events_addresses[7],
+  date: Date.new(2021, 11, 22),
+  start_time: Time.new(2021, 11, 20, 11, 0, 0),
+  duration: 4,
+  description: "Completing the relevant training and asking questions if you are uncertain about anything. Completing all duties assigned by the supervisor and reporting any issues immediately. Observing the rules and safety regulations of the organization while carrying out tasks. Arriving on time for duty and remaining professional in your interactions with all stakeholders. Making recommendations for improvement where feasible and appropriate. Communicating with the supervisor or relevant stakeholders when you are running late or unable to fulfill your duties.",
+  number_positions: (1..10).to_a.sample,
+  charity: chelsea_foundation
+)
+
+charity_shop_event = Event.create!(
+  event_name: "Generous Hearts",
+  address: hackney_events_addresses[7],
+  date: Date.new(2021, 11, 28),
+  start_time: Time.new(2021, 11, 20, 9, 0, 0),
+  duration: 6,
+  description: "Completing the relevant training and asking questions if you are uncertain about anything. Completing all duties assigned by the supervisor and reporting any issues immediately. Observing the rules and safety regulations of the organization while carrying out tasks. Arriving on time for duty and remaining professional in your interactions with all stakeholders. Making recommendations for improvement where feasible and appropriate. Communicating with the supervisor or relevant stakeholders when you are running late or unable to fulfill your duties.",
+  number_positions: (1..10).to_a.sample,
+  charity: marie_curie
 )
 
 Booking.create!(
   event: pepe_event_1,
   volunteer: pepe_volunteer,
-  employer_associated: false
+  employer_associated: true
 )
 
 Booking.create!(
   event: pepe_event_2,
   volunteer: pepe_volunteer,
-  employer_associated: false
+  employer_associated: true
 )
 
 Booking.create!(
   event: pepe_event_3,
   volunteer: pepe_volunteer,
-  employer_associated: false
+  employer_associated: true
+)
+
+Booking.create!(
+  event: sport_event,
+  volunteer: Volunteer.find(2),
+  employer_associated: true
+)
+
+Booking.create!(
+  event: charity_shop_event,
+  volunteer: Volunteer.find(3),
+  employer_associated: true
+)
+
+Booking.create!(
+  event: sport_event,
+  volunteer: Volunteer.find(3),
+  employer_associated: true
+)
+
+Booking.create!(
+  event: pepe_event_1,
+  volunteer: Volunteer.find(5),
+  employer_associated: true
 )
 
 puts "Events and bookings created"
-
-# 45.times do
-#   Booking.create!(
-#     event: Event.all.sample,
-#     volunteer: Volunteer.all.sample,
-#     employer_associated: [true, false].sample
-#   )
-# end
 
 puts "You're fully seeded"
