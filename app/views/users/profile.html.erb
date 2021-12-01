@@ -13,23 +13,26 @@
 <div class='container profile-container container-stretch'>
   <h3><%= current_user.volunteer.first_name %> <%= current_user.volunteer.last_name %></h3>
 
+   <% if current_user.volunteer.dbs_checked %>
+     <p class="profile-dbs">DBS Checked? <i class="fas fa-check green-tick"></i></p>
+      <% else %>
+        <p class="profile-dbs">DBS Checked? <i class="fas fa-times red-cross"></i> <a href="https://www.gov.uk/request-copy-criminal-record">Apply here</a></p>
+      <% end %>
+
   <div class='profile-vol-summary'>
-  <div class='summary-card'>
-      <p>
-      <%# <span class='profile-number'> %>
+  <%# <div class='summary-card'>
       <strong>DBS Status </strong><br>
       <% if current_user.volunteer.dbs_checked %>
-        Valid until 10/11/22.<br>
-      <% else %>
-       <div class="dbs-p">No Certificate</div><a href="https://www.gov.uk/request-copy-criminal-record">Apply here</a>
-      <% end %>
-      </p>
-    </div>
+        <%# Valid until 10/11/22.<br> %>
+      <%# else %>
+       <%# <div class="dbs-p">No Certificate</div><a href="https://www.gov.uk/request-copy-criminal-record">Apply here</a> %>
+      <%# end %>
+    <%# </div> %>
 
-    <div class='summary-card'>
+    <div class='profile-summary-card'>
       <p><span class='profile-number'>3</span><br>events attended<br><span class='profile-number'><i class="fas fa-hand-holding-heart icon-pink"></i></span></p>
     </div>
-    <div class='summary-card'>
+    <div class='profile-summary-card'>
       <p><span class='profile-number'>15</span><br>hours volunteered<br><span class='profile-number'><i class="fas fa-hands-helping icon-pink"></i></span></p>
     </div>
   </div>
