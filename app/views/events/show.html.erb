@@ -61,8 +61,7 @@
     <div class="list short-list" data-show-more-target="shortlist">
       <h5>Overview of responsibilites</h5>
       <ul>
-        <li><%= @event.description.split(".").first %>.</li>
-        <li><%= @event.description.split(".")[1]%>...</li>
+        <li><%= @event.description[0,150] %>...</li>
         <div class="unhide-hide-button">
           <button class="unhide-hide" data-action="click->show-more#unhide">show more</button>
         </div>
@@ -71,8 +70,10 @@
   </div>
 
     <div class="button-container">
-        <%= link_to "Chat now", user_chatrooms_path(@user), method: :post, class:"chat-button" %>
-  </div>
+        <%= link_to user_chatrooms_path(@user), method: :post, class:"chat-button" do %>
+          <i class="fas fa-comment-medical"></i>
+        <% end %>
+    </div>
 
   <div class="button-background" id="book-now">
     <div style="height:40px" class="button">
