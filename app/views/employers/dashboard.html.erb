@@ -27,15 +27,15 @@
         <div class='employer-vol-summary'>
           <div class='employer-summary-card'>
             <h5><%= @employees.count %> employees enrolled</h5>
-            <i class="fas fa-user-friends"></i>
+            <i class="fas fa-user-friends icon-pink"></i>
           </div>
           <div class='employer-summary-card'>
             <h5><%= @bookings.count %> events attended</h5>
-            <i class="fas fa-hand-holding-heart"></i>
+            <i class="fas fa-hand-holding-heart icon-pink"></i>
           </div>
           <div class='employer-summary-card'>
             <h5><%= @hours.sum %> hours volunteered</h5>
-            <i class="fas fa-hands-helping"></i>
+            <i class="fas fa-hands-helping icon-pink"></i>
           </div>
         </div>
 
@@ -43,17 +43,17 @@
         <div class='employer-vol-summary'>
           <div class='employer-summary-card'>
             <h5><%= @enrol_goal %> employees</h5>
-            <i class="fas fa-trophy"></i>
+            <i class="fas fa-trophy icon-pink"></i>
             <h5><%= number_to_percentage((@employees.count)/@enrol_goal.to_f*100, precision:0) %> complete</h5>
           </div>
           <div class='employer-summary-card'>
             <h5><%= @events_goal %> events</h5>
-            <i class="fas fa-medal"></i>
+            <i class="fas fa-medal icon-pink"></i>
             <h5><%= number_to_percentage((@bookings.count)/@events_goal.to_f*100, precision:0) %> complete</h5>
           </div>
           <div class='employer-summary-card'>
             <h5><%= @hours_goal %> hours</h5>
-            <i class="fas fa-award"></i>
+            <i class="fas fa-award icon-pink"></i>
             <h5><%= number_to_percentage((@hours.sum)/@hours_goal.to_f*100, precision:0) %> complete</h5>
           </div>
         </div>
@@ -77,8 +77,8 @@
               <div class="card-employee-infos">
                 <% bookings = employee.bookings.select { |booking| booking.event.date < Time.now } %>
                 <% hours = bookings.map { |booking| booking.event.duration } %>
-                <p><i class="fas fa-calendar-week"></i> <%= bookings.count %> events attended</p>
-                <p><i class="fas fa-stopwatch"></i> <%= hours.sum %> hours volunteered</p>
+                <p><i class="fas fa-calendar-week icon-pink"></i> <%= bookings.count %> events attended</p>
+                <p><i class="fas fa-stopwatch icon-pink"></i> <%= hours.sum %> hours volunteered</p>
               </div>
             </div>
           <% end %>
