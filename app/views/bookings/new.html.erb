@@ -4,27 +4,35 @@
 </div>
 
 
-<div class="app">
-  <h3 class="carousel-card">Event Registration</h3>
+<div class="container new-booking">
 
-<div class="event-details" id="booking-event-details">
+  <div class="title-and-back">
+    <h3 class="carousel-card">Event Registration</h3>
+    <%= link_to event_path(@event) do %>
+      <i class="fas fa-arrow-circle-left"></i>
+    <% end %>
+  </div>
 
-    <h3><%= @event.event_name %></h3>
-    <h5><%= @event.charity.charity_name %></h5>
+  <div class="event-details">
 
+    <h5><%= @event.charity.charity_name %>
+      <%= link_to charity_path(@event.charity) do %>
+        <i class="fas fa-info-circle "></i>
+      <% end %>
+    </h5>
     <p><%= @event.address %></p>
 
     <div class="event-timings">
       <div class="event-timings-detail">
-        <h4>📅</h4>
-        <h4><%= @event.date.strftime("%d/%m/%Y") %></h4>
+        <i class="fas fa-calendar-week"></i>
+        <h4><%= @event.date.strftime("%e %b %y") %></h4>
       </div>
       <div class="event-timings-detail">
-        <h4>⌚</h4>
+        <i class="fas fa-clock"></i>
         <h4><%= @event.start_time.strftime("%H:%M") %></h4>
       </div>
       <div class="event-timings-detail">
-        <h4>⏳</h4>
+        <i class="fas fa-hourglass-start"></i>
         <h4>
           <% if @event.duration ==1 %>
             <%= "#{@event.duration} hour" %>
@@ -34,22 +42,15 @@
         </h4>
       </div>
     </div>
-    </div>
-<div>
-  <%= simple_form_for [@event, @booking] do |f| %>
 
-<div class='booking-form-checkbox'>
-  <span class='checkbox-element checkbox-element-box'><%= f.check_box :employer_associated %></span><span class='checkbox-element'> <label for="booking[employer_associated]">Check the box if you are attending this event through your company.</label></span>
 </div>
 
-  <br>
-  <br>
-  <br>
-  <%= link_to :back do %>
-      <i class="fas fa-chevron-left"></i>
-  <% end %>
+<div class="booking-form">
+  <%= simple_form_for [@event, @booking] do |f| %>
+    <div class='booking-form-checkbox'>
+      <span class='checkbox-element checkbox-element-box'><%= f.check_box :employer_associated %></span><span class='checkbox-element'> <label for="booking[employer_associated]">Check the box if you are attending this event through your company</label></span>
+    </div>
 
-
-    <%= f.submit 'Confirm Booking', class:"button" %>
+    <%= f.submit 'Confirm booking', class:"button confirm-booking" %>
   <% end %>
 </div>
