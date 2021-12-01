@@ -11,9 +11,15 @@
 </div>
 
 <div class='container profile-container container-stretch'>
+  <div class="profile-back">
+    <%= link_to events_path do %>
+      <i class="fas fa-arrow-circle-left"></i>
+    <% end %>
+  </div>
+
   <h3><%= current_user.volunteer.first_name %> <%= current_user.volunteer.last_name %></h3>
 
-   <% if current_user.volunteer.dbs_checked %>
+  <% if current_user.volunteer.dbs_checked %>
      <p class="profile-dbs">DBS Checked? <i class="fas fa-check green-tick"></i></p>
       <% else %>
         <p class="profile-dbs">DBS Checked? <i class="fas fa-times red-cross"></i> <a href="https://www.gov.uk/request-copy-criminal-record">Apply here</a></p>
@@ -50,8 +56,7 @@
       <strong>Employer name: </strong><%= current_user.volunteer.employer.company_name %>
       <% end %>
     </p>
-    <button class=button>
-    <%= link_to "View my bookings", bookings_path %></button>
+    <button class="button view-bookings"><%= link_to "View my bookings", bookings_path %></button>
     <br>
     <br>
 
@@ -60,8 +65,5 @@
       <p>You don't have any reviews yet.</p>
     </div> %>
 
-    <%= link_to root_path do %>
-        <i class="fas fa-chevron-left"></i>
-    <% end %>
  </div>
 </div>
