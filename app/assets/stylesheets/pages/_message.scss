@@ -1,0 +1,29 @@
+.chat-headers{
+  color: #756a6a;  border: 1px solid rgba(0,0,0,0.2);
+  box-shadow: 0 0 15px rgba(0,0,0,0.15);
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  text-align: center;
+  position: relative;
+  padding: 5px;
+  overflow: auto;
+  height: auto;
+  padding: 7px 12px;
+}
+
+.current-user-content {
+  color: rgba(255, 87, 87, 1);
+}
+
+.other-user-content {
+  color: #756a6a;
+}
+.chatroom-container {
+  border: 1px solid rgba(0,0,0,0.2);
+  box-shadow: 0 0 15px rgba(0,0,0,0.15);
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  text-align: center;
+  position: relative;
+  overflow: auto;
+  }
