@@ -7,45 +7,28 @@
 <div class="container">
 
   <div class="charity-details">
-    <h3><%= @charity.charity_name %></h3>
-    <h5><%= @charity.category %></h5>
-
-    <div class="about-us">
-      <h5>About Us</h5>
-      <ul>
-        <% description = @charity.description.split(".") %>
-        <% description.each do |sentence| %>
-          <li><%= sentence %></li>
-        <% end %>
-      </ul>
+    <div class="title-and-back">
+      <h3><%= @charity.charity_name %></h3>
+      <%= link_to :back do %>
+        <i class="fas fa-arrow-circle-left"></i>
+      <% end %>
     </div>
+    <h5><i class="fas fa-ribbon icon-pink"></i> <%= @charity.category %></h5>
   </div>
 
-  <%# <h5>Our volunteering opportunities</h5>
-  <div class="app">
-    <ul class="hs full no-scrollbar">
+  <div class="about-us">
+    <h5>About Us</h5>
+    <ul>
+      <% description = @charity.description.split(".") %>
+      <% description.each do |sentence| %>
+        <li><%= sentence %>.</li>
+      <% end %>
+    </ul>
+  </div>
 
-      <div class="card-home">
-        <% @charity.events.each do |event| %>
-          <%# <div class=card-text> %>
-              <%# <%= event.event_name %>
-              <%# <%= event.date %>
-              <%# <%= event.start_time %>
-              <%# <%= event.address %>
-          <%# </div> %>
-        <%# <% end  %>
-      <%# </div> %>
-    <%# </ul> %>
+  <%# <div class="charity-events"> %>
+    <%# <h5>Upcoming volunteering events</h5> %>
   <%# </div> %>
-
-  <br>
-  <br>
-  <br>
-  <br>
-
-  <%= link_to :back do %>
-      <i class="fas fa-chevron-left"></i>
-  <% end %>
 
 
 </div>

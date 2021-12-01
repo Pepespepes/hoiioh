@@ -1,8 +1,9 @@
-.charity-details ul {
-  list-style-type: disc;
-  margin-left: 15px;
-}
 
+.charity-details {
+  padding: 8px 16px;
+  background-color: white;
+  border-radius: 4px;
+}
 
 .charity-details h3 {
   margin-top: 16px;
@@ -10,4 +11,23 @@
 
 .about-us {
   margin-top: 16px;
+  padding: 8px 16px;
+  background-color: white;
+  border-radius: 4px;
+}
+
+.about-us ul {
+  list-style-type: none;
+  // margin-left: 15px;
+}
+
+.about-us li {
+  margin-bottom: 8px;
+}
+
+.charity-events {
+  margin-top: 16px;
+  padding: 8px 16px;
+  background-color: white;
+  border-radius: 4px;
 }
