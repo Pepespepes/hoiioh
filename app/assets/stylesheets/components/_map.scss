@@ -1,13 +1,26 @@
 .mapboxgl-popup {
   max-width: 200px;
-  opacity: 0.8;
+  opacity: 1;
+  z-index: 2;
 }
+
+// .mapboxgl-popup p {
+//   margin-bottom: 4px;
+// }
 
 .mapboxgl-popup-content {
   text-align: center;
   font-family: 'Ubuntu', sans-serif;
-  background-color: #ff5757;
-  color: white;
+  background-color: white;
+  color: #ff5757;
+  border: 1px solid #ff5757;
+  height: 150px;
+  z-index: 10;
+  position: relative;
+}
+
+.mapboxgl-popup-content p, h5 {
+  margin: 4px;
 }
 
 // .mapboxgl-popup-close {
