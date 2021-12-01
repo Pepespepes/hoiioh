@@ -5,7 +5,7 @@
   position: relative;
 
   @media(min-width: 600px) {
-      height: 40vh;
+    height: 40vh;
   }
 
   @media(max-width: 600px) {
@@ -43,35 +43,62 @@
   3px rgba(0,0,0,0.2);
 }
 
+.dashboard-subheading {
+  padding-top: 12px;
+  font-size: 14px;
+}
+
+.company-graph {
+  border-left: solid 1.5px rgba(255, 87, 87, 1);
+}
+
+// EMPLOYER TAB
+
 .employer-vol-summary {
   display: grid;
   grid-gap: 8px;
   grid-template-columns: 1fr 1fr 1fr;
-  height: 96px;
-  color: white;
+  height: 116px;
   margin-left: 0px;
   margin-right: 15px;
+  // background-color: white;
+  padding-bottom: 16px;
+  border-bottom: solid 1px rgba(255, 87, 87, 0.2);
 }
 
 .employer-summary-card {
-  background-color: rgba(255, 87, 87, 0.8);
+  border: solid 1px rgba(255, 87, 87, 0.6);
+  background-color: white;
   // width: 30%;
-  height: 100%;
-  border-radius: 5px;
+  border-radius: 4px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
   padding: 8px;
+  box-shadow: 1px 1px 2px rgba(255, 87, 87, 0.2);
 }
+
+.employer-summary-card i {
+  color: rgba(255, 87, 87, 1);
+  padding-bottom: 5px;
+  padding-top: 8px;
+}
+
+.employer-vol-summary h5 {
+  font-size: 13px;
+  margin: 0;
+}
+
+// EMPLOYEE TAB
 
 .employee-cards {
   margin-bottom: 8px;
-  margin-top: 12px;
+  margin-top: 16px;
   margin-right: 8px;
   display: grid;
-  grid-gap: 8px;
+  grid-gap: 12px;
   grid-template-columns: 1fr 1fr 1fr;
 
   @media(max-width: 992px) {
@@ -86,22 +113,30 @@
 .card-employee {
   // width: 100%;
   overflow: hidden;
-  height: 64px;
+  height: 72px;
   background: white;
   display: flex;
   align-items: center;
-  border-radius: 5px;
-  justify-content: center;
+  border-radius: 4px;
+  justify-content: space-between;
+  margin-right: 15px;
+  box-shadow: 1px 1px 2px rgba(255, 87, 87, 0.2);
+  padding-bottom: 0px;
 }
 
-.dashboard p {
-  font-size: 12px;
+.card-employee p {
+  font-size: 13px;
   margin: 4px;
 }
 
-.card-employee h5, .employer-vol-summary h5 {
-  font-size: 14px;
-  color: white;
+.card-employee h5 {
+  font-size: 16px;
+  margin: 0;
+}
+
+.card-employee i {
+  color: rgba(255, 87, 87, 1);
+  margin-right: 4px;
 }
 
 .card-employee .card-employee-infos {
@@ -112,26 +147,23 @@
   align-items: center;
   justify-content: center;
   padding: 8px;
+  border: solid 1px rgba(255, 87, 87, 0.6);
+  border-bottom-right-radius: 4px;
+  border-top-right-radius: 4px;
 }
 
 .card-employee .card-employee-name {
-  background-color: rgba(255, 87, 87, 0.8);
+  background-color: rgba(255, 87, 87, 0.9);
+  border: solid 1px rgba(255, 87, 87, 0.6);
+  color: white;
   width: 40%;
   height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 8px;
+  padding: 4px;
   text-align: center;
-}
-
-.dashboard-subheading {
-  padding-top: 16px;
-  font-size: 18px;
-}
-
-.company-graph {
-  border-left: solid 1px rgba(255, 87, 87, 1);
-  margin-bottom: 8px;
+  border-bottom-left-radius: 4px;
+  border-top-left-radius: 4px;
 }

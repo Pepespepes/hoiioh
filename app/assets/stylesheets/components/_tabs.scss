@@ -1,20 +1,21 @@
 .tabs {
   width: 100%;
   display: flex;
-  margin-top: 16px;
-  // margin-bottom: 8px;
+  margin-top: 8px;
+
 }
 
 .tab {
   flex-grow: 1;
 }
 
-.tablinks {
-  width: 100%;
+.tab button {
+  border: none;
+  width: 90%;
   height: 32px;
-  border: 1px solid;
-  color: rgba(255, 87, 87, 1);
-  background-color: white;
+  border-bottom: 2px solid rgba(255, 87, 87, 1);
+  color: black;
+  background: none;
   font-size: 18px;
   text-align: center;
   margin: 0px;
@@ -22,14 +23,17 @@
   line-height: 1.45;
 }
 
-.tablinks.inactive {
-  background-color: rgba(255, 87, 87, 0.1);
+.tab button.inactive {
+  // background-color: rgba(255, 87, 87, 0.1);
   opacity: 50%;
+  border-bottom: none;
 }
 
 .tabcontent {
   position: absolute;
   margin: 0;
   padding: 0;
-  width: 95vw;
+  width: 100%;
+  padding-right: 18px;
+  padding-left: 4px;
 }
