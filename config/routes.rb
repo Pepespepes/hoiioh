@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   get 'profile', to: 'users#profile'
   get 'details', to: 'pages#details'
+  get 'dashboard', to: 'employers#dashboard'
+
 
   resources :charities, only: %i[create show] do
     resources :events, only: %i[new create]

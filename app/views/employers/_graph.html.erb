@@ -1,0 +1,13 @@
+
+<div class="chart-wrap">
+  <div class="grid horizontal">
+
+    <% Charity::CATEGORIES.each do |categ| %>
+      <% category_bookings = @bookings.select { |booking| booking.event.charity.category == categ } %>
+      <% category_durations = category_bookings.map { |booking| booking.event.duration } %>
+      <% category_hours = category_durations.sum %>
+      <div class="bar" style='--bar-value:<%= number_to_percentage(category_hours*2.5) %>;' data-name="<%= categ %> (<%= category_hours %> hrs)"></div>
+    <% end %>
+
+  </div>
+</div>

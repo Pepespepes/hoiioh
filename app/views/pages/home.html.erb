@@ -1,23 +1,27 @@
 <div class="homepage-container">
 
-  <%= video_tag "homepagevid.mp4", autoplay: :autoplay, loop: :loop, muted: :muted, class: "home_video" %>
+  <%= video_tag "homepagevid.mp4", autoplay: true, loop: true, muted: true, controls: false, playsinline: true, class: "home_video" %>
 
   <div class="homepage-headers">
-    <h1>Volunteering near you</h1>
+    <h1>Instant Help</h1>
   </div>
 
   <div class="homepage-buttons-container">
 
-    <div class="homepage-button-container">
+    <%# <div class="homepage-button-container">
       <a href="/events" class="homepage-button">See Events</a>
-    </div>
+    </div> %>
 
     <div class="homepage-button-container">
-      <a href="" class="homepage-button-invert">Register as a Volunteer</a>
+      <button onclick="location.href='/events'" class="homepage-button">Volunteer Now</button>
     </div>
 
+    <%# <div class="homepage-button-container">
+      <a href="#" class="homepage-button-invert" id="semergency-popup">Emergency Help</a>
+    </div> %>
+
+    <div class="homepage-button-container">
+      <button id="emergency-popup" class="homepage-button-invert">Emergency Help</button>
+    </div>
   </div>
-
-
-
 </div>

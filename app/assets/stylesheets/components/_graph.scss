@@ -1,0 +1,63 @@
+$width: 95%;
+$bar-size: 20px;
+$bar-color:rgba(255, 87, 87, 1);
+$bar-rounded: 3px;
+$grid-color: white;
+
+.chart-wrap{
+  width: $width;
+  height: 100%;
+  font-size: 12px;
+}
+
+.grid{
+  display:flex;
+  flex-direction:row;
+  justify-content:center;
+  background: $grid-color;
+  border-radius: 4px;
+  box-shadow: 1px 1px 2px rgba(255, 87, 87, 0.2);
+  padding: 4px 0px;
+
+  .bar {
+    background-color:$bar-color;
+    width:$bar-size;
+    height: var(--bar-value);
+    align-self:flex-end;
+    margin: 0;
+    // border-radius:$bar-rounded $bar-rounded 0 0;
+    position: relative;
+
+    &::after{
+      content:attr(data-name);
+      padding:8px;
+      display:inline-block;
+      white-space:nowrap;
+      position:absolute;
+      transform:rotate(-45deg);
+    }
+  }
+
+  &.horizontal{
+    flex-direction:column;
+    border-bottom:none;
+    .bar{
+      height:$bar-size;
+      width: var(--bar-value);
+      align-self:flex-start;
+      margin: 4px 0;
+      border-radius:0 $bar-rounded $bar-rounded 0;
+
+      &::after{
+        top:initial;
+        left:100%;
+        padding:0 4px;
+        display:inline-block;
+        // white-space:nowrap;
+        position:absolute;
+        transform:rotate(0deg);
+        // line-height:$bar-size;
+      }
+    }
+  }
+}

@@ -10,44 +10,55 @@
   <img src=<%= profile_avatar %> alt="Profile image" class='avatar-xlarge'>
 </div>
 
-<div class='container profile-container'>
+<div class='container profile-container container-stretch'>
   <h3><%= current_user.volunteer.first_name %> <%= current_user.volunteer.last_name %></h3>
 
   <div class='profile-vol-summary'>
+  <div class='summary-card'>
+      <p>
+      <%# <span class='profile-number'> %>
+      <strong>DBS Status </strong><br>
+      <% if current_user.volunteer.dbs_checked %>
+        Valid until 10/11/22.<br>
+      <% else %>
+       <div class="dbs-p">No Certificate</div><a href="https://www.gov.uk/request-copy-criminal-record">Apply here</a>
+      <% end %>
+      </p>
+    </div>
+
     <div class='summary-card'>
-      <p><span class='profile-number'>3</span><br>events attended<br><span class='profile-number'>🙌</span></p>
+      <p><span class='profile-number'>3</span><br>events attended<br><span class='profile-number'><i class="fas fa-hand-holding-heart icon-pink"></i></span></p>
     </div>
     <div class='summary-card'>
-      <p><span class='profile-number'>15</span><br>hours volunteered<br><span class='profile-number'>🎉</span></p>
+      <p><span class='profile-number'>15</span><br>hours volunteered<br><span class='profile-number'><i class="fas fa-hands-helping icon-pink"></i></span></p>
     </div>
   </div>
 
   <div class='profile-summary'>
     <p><%= current_user.volunteer.description %></p>
-    <p><strong>Age: </strong><%= current_user.volunteer.age %> years old</p>
-      <% if current_user.volunteer.dbs_checked %>
-        <p><strong>DBS Checked: </strong>You have a valid DBS certificate.</p>
-      <% else %>
-        <p><strong>DBS Checked: </strong>You don't have a valid DBS certificate. <a href="https://www.gov.uk/request-copy-criminal-record">Click here</a> to apply for one.</p>
-      <% end %>
+
+      <%# <% if current_user.volunteer.dbs_checked %>
+        <%# <p><strong>DBS Checked: </strong>You have a valid DBS certificate.</p> %>
+      <%# <% else %>
+        <%# <p><strong>DBS Checked: </strong>You don't have a valid DBS certificate. <a href="https://www.gov.uk/request-copy-criminal-record">Click here</a> to apply for one.</p> %>
+      <%# <% end %>
 
       <% unless current_user.volunteer.employer_id == nil %>
       <strong>Employer name: </strong><%= current_user.volunteer.employer.company_name %>
       <% end %>
     </p>
-  </div>
+    <button class=button>
+    <%= link_to "View my bookings", bookings_path %></button>
+    <br>
+    <br>
 
-  <%= link_to "View my bookings", bookings_path %>
-  <br>
-  <br>
+    <%# <div>
+      <h5>My reviews</h5>
+      <p>You don't have any reviews yet.</p>
+    </div> %>
 
-  <div>
-    <h5>My reviews</h5>
-    <p>You don't have any reviews yet.</p>
-  </div>
-
-  <%= link_to root_path do %>
-      <i class="fas fa-chevron-left"></i>
-  <% end %>
-
+    <%= link_to root_path do %>
+        <i class="fas fa-chevron-left"></i>
+    <% end %>
+ </div>
 </div>

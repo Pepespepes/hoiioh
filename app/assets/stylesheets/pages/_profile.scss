@@ -28,15 +28,23 @@
 }
 
 .profile-vol-summary {
+  background-color: white;
+  border-radius: 10px;
+  background-size: cover;
   display: flex;
+  flex-grow: 1;
   text-align: center;
   justify-content: space-between;
+  padding: 2px;
   margin-top: 20px;
   margin-bottom: 10px;
+  // margin-left: -10px;
+  // margin-right: -10px;
 }
 
 .profile-vol-summary .summary-card {
-  padding: 8px;
+  padding: 4px;
+  margin: 8px;
   background-color: rgba(255, 87, 87, 0.5);
   border-radius: 5px;
   width: 48%;
@@ -44,6 +52,12 @@
 
 .summary-card p {
   margin-bottom: 0px;
+}
+.summary-card a {
+  background-color:rgba(255, 87, 87, 1);
+  color: white;
+  padding: 2px;
+  border-radius: 5px;
 }
 
 .profile-container h3 {
@@ -53,4 +67,19 @@
 
 .profile-number {
   font-size: larger;
+}
+
+.profile-summary {
+  background-color: white;
+  border-radius: 10px;
+  padding: 16px 16px 0px;
+  text-align: justify;
+}
+
+.profile-summary button {
+   position: sticky;
+}
+
+.dbs-p {
+  margin: 0px 0px 4px 0px;
 }

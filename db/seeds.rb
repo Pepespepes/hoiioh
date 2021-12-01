@@ -39,7 +39,7 @@ pepe_volunteer = Volunteer.create!(
                     first_name: 'Pepe',
                     last_name: 'Baena',
                     employer: Employer.all.sample,
-                    description: 'I like helping and volunteering and dedicate a bit of time to the causes that are closer to my heart. Specially those that involve people and animals. Issues of human rights and identity are also quite dear to me and often support those causes too. I believe that in order to change the environment you live in, you need to change yourself first, and by helping others when I can I hope I will be living in a more humane and better world.',
+                    description:"I like helping and volunteering and dedicate a bit of time to the causes that are closer to my heart. Specially those that involve people and animals. Issues of human rights and identity are also quite dear to me and often support those causes too. I believe that in order to change the environment you live in, you need to change yourself first, and by helping others when I can I hope I will be living in a more humane and better world.",
                     age: (18..80).to_a.sample,
                     dbs_checked: false,
                     user: pepe_user
@@ -278,6 +278,7 @@ event_names =  ["The Crucial Cause",
                 "Smileys",
                 "Ignite helpers",
                 "Generous Hearts",
+                "Red and Blu cross",
                 "Charitable Change",
                 "Together for London",
                 "All For Love",
@@ -292,10 +293,25 @@ event_names =  ["The Crucial Cause",
                 "Endless Battle",
                 "Angel Time",
                 "Home Sweeter Home",
-                "Distribute Love",
-                "Winter Fundraiser"]
+                "Distribute Love"
+                ]
 
 # EVENTS
+
+time_array = [Time.new(2021, 11, 20, 9, 0, 0),
+              Time.new(2021, 11, 20, 10, 0, 0),
+              Time.new(2021, 11, 20, 11, 0, 0),
+              Time.new(2021, 11, 20, 12, 0, 0),
+              Time.new(2021, 11, 20, 13, 0, 0),
+              Time.new(2021, 11, 20, 14, 0, 0),
+              Time.new(2021, 11, 20, 15, 0, 0),
+              Time.new(2021, 11, 20, 10, 15, 0),
+              Time.new(2021, 11, 20, 11, 30, 0),
+              Time.new(2021, 11, 20, 13, 45, 0),
+              Time.new(2021, 11, 20, 12, 30, 0),
+              Time.new(2021, 11, 20, 9, 30, 0),
+              Time.new(2021, 11, 20, 10, 45, 0)]
+
 hackney_counter = 0
 hackney_name_counter = 0
 20.times do
@@ -303,12 +319,7 @@ hackney_name_counter = 0
     event_name: event_names[hackney_name_counter],
     address: hackney_events_addresses[hackney_counter],
     date: Faker::Date.forward(days: 2),
-    start_time:  [Time.new(2021, 11, 1, 14, 0, 0),
-                  Time.new(2021, 11, 1, 9, 0, 0),
-                  Time.new(2021, 11, 1, 11, 0, 0),
-                  Time.new(2021, 11, 1, 12, 0, 0),
-                  Time.new(2021, 11, 1, 10, 0, 0),
-                  Time.new(2021, 11, 1, 13, 0, 0)].sample,
+    start_time: time_array.sample,
     duration: (1..6).to_a.sample,
     description: "Completing the relevant training and asking questions if you are uncertain about anything. Completing all duties assigned by the supervisor and reporting any issues immediately. Observing the rules and safety regulations of the organization while carrying out tasks. Arriving on time for duty and remaining professional in your interactions with all stakeholders. Making recommendations for improvement where feasible and appropriate. Communicating with the supervisor or relevant stakeholders when you are running late or unable to fulfill your duties.",
     number_positions: (1..10).to_a.sample,
@@ -325,12 +336,7 @@ west_name_counter = 20
     event_name: event_names[west_name_counter],
     address: west_events_addresses[west_counter],
     date: Faker::Date.forward(days: 2),
-    start_time:  [Time.new(2021, 11, 1, 14, 0, 0),
-                  Time.new(2021, 11, 1, 9, 0, 0),
-                  Time.new(2021, 11, 1, 11, 0, 0),
-                  Time.new(2021, 11, 1, 12, 0, 0),
-                  Time.new(2021, 11, 1, 10, 0, 0),
-                  Time.new(2021, 11, 1, 13, 0, 0)].sample,
+    start_time: time_array.sample,
     duration: (1..6).to_a.sample,
     description: "Completing the relevant training and asking questions if you are uncertain about anything. Completing all duties assigned by the supervisor and reporting any issues immediately. Observing the rules and safety regulations of the organization while carrying out tasks. Arriving on time for duty and remaining professional in your interactions with all stakeholders. Making recommendations for improvement where feasible and appropriate. Communicating with the supervisor or relevant stakeholders when you are running late or unable to fulfill your duties.",
     number_positions: (1..10).to_a.sample,
@@ -340,36 +346,13 @@ west_name_counter = 20
   west_name_counter += 1
 end
 
-# PAST EVENTS
-west_counter2 = 0
-west_name_counter2 = 20
-20.times do
-  Event.create!(
-    event_name: event_names[west_name_counter2],
-    address: west_events_addresses[west_counter2],
-    date: Faker::Date.backward(days: 30),
-    start_time:  [Time.new(2021, 11, 1, 14, 0, 0),
-                  Time.new(2021, 11, 1, 9, 0, 0),
-                  Time.new(2021, 11, 1, 11, 0, 0),
-                  Time.new(2021, 11, 1, 12, 0, 0),
-                  Time.new(2021, 11, 1, 10, 0, 0),
-                  Time.new(2021, 11, 1, 13, 0, 0)].sample,
-    duration: (1..6).to_a.sample,
-    description: "Completing the relevant training and asking questions if you are uncertain about anything. Completing all duties assigned by the supervisor and reporting any issues immediately. Observing the rules and safety regulations of the organization while carrying out tasks. Arriving on time for duty and remaining professional in your interactions with all stakeholders. Making recommendations for improvement where feasible and appropriate. Communicating with the supervisor or relevant stakeholders when you are running late or unable to fulfill your duties.",
-    number_positions: (1..10).to_a.sample,
-    charity: Charity.all.sample
-  )
-  west_counter2 += 1
-  west_name_counter2 += 1
-end
-
 # PEPE EVENTS AND BOOKINGS
 
 pepe_event_1 = Event.create!(
   event_name: event_names[0],
   address: west_events_addresses[2],
   date: Date.new(2021, 11, 1),
-  start_time: Time.new(2021, 11, 1, 14, 0, 0),
+  start_time: Time.new(2021, 11, 1, 14, 30, 0),
   duration: 5,
   description: "Completing the relevant training and asking questions if you are uncertain about anything. Completing all duties assigned by the supervisor and reporting any issues immediately. Observing the rules and safety regulations of the organization while carrying out tasks. Arriving on time for duty and remaining professional in your interactions with all stakeholders. Making recommendations for improvement where feasible and appropriate. Communicating with the supervisor or relevant stakeholders when you are running late or unable to fulfill your duties.",
   number_positions: (1..10).to_a.sample,
@@ -398,8 +381,6 @@ pepe_event_3 = Event.create!(
   charity: Charity.all.sample
 )
 
-puts "Events created"
-
 Booking.create!(
   event: pepe_event_1,
   volunteer: pepe_volunteer,
@@ -418,18 +399,14 @@ Booking.create!(
   employer_associated: false
 )
 
-# PAST BOOKINGS
+puts "Events and bookings created"
 
-date_range = (DateTime.now - 100.days)..(DateTime.now - 1.days)
-
-35.times do
-  Booking.create!(
-    event: Event.where(date: date_range).sample,
-    volunteer: Volunteer.where.not(first_name: 'Pepe').sample,
-    employer_associated: [true, false].sample
-  )
-end
-
-puts "Bookings created"
+# 45.times do
+#   Booking.create!(
+#     event: Event.all.sample,
+#     volunteer: Volunteer.all.sample,
+#     employer_associated: [true, false].sample
+#   )
+# end
 
 puts "You're fully seeded"

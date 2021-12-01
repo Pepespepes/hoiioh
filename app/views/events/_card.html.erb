@@ -47,10 +47,10 @@ charity_shops =  ['https://images.unsplash.com/photo-1470309864661-68328b2cd0a5?
       <h4 class="card-title"><%= event.event_name %></h4>
       <h5><%= event.charity.charity_name %></h5>
       <p class="address"><%= event.address.split(",").first %></p>
-      <p>📅 <%= event.date.strftime("%d/%m/%Y") %></p>
+      <p><i class="fas fa-calendar-week icon-pink"></i> <%= event.date.strftime("%e %b %y") %></p>
       <div class="timings">
-        <p>⌚ <%= event.start_time.strftime("%H:%M") %></p>
-        <p>⏳ <%= event.duration %>
+        <p><i class="fas fa-clock icon-pink"></i> <%= event.start_time.strftime("%H:%M") %></p>
+        <p><i class="fas fa-hourglass-start icon-pink"></i> <%= event.duration %>
         <% if event.duration == 1 %>
           hour</p>
         <% else %>
