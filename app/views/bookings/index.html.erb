@@ -10,21 +10,22 @@
     </div>
     <% @upcoming_bookings.each do |booking| %>
       <div class='event-booking-card'>
-        <h6 class="booking-index-date"><%= booking.event.date.strftime("%d/%m/%Y") %></h6>
-        <p>🎗️ <%= booking.event.charity.charity_name %></p>
-        <p>⏰ <%= booking.event.start_time.strftime("%H:%M")%></p>
-        <p>📍 <%= booking.event.address %></p>
+        <h6 class="booking-index-date"><%= booking.event.date.strftime("%e %b %y") %></h6>
+        <p><i class="fas fa-ribbon icon-pink"></i>  <%= booking.event.charity.charity_name %></p>
+        <p><i class="fas fa-clock icon-pink"></i>  <%= booking.event.start_time.strftime("%H:%M")%></p>
+        <p><i class="fas fa-thumbtack icon-pink"></i>  <%= booking.event.address %></p>
       </div>
     <% end %>
+
     <div class="booking-title">
     <h5> Past Bookings </h5>
     </div>
     <% @past_bookings.each do |booking| %>
       <div class='event-booking-card'>
-        <h6 class="booking-index-date"><%= booking.event.date.strftime("%d/%m/%Y") %></h6>
-        <p>🎗️<%= booking.event.charity.charity_name %></p>
-        <p>⏰ <%= booking.event.start_time.strftime("%H:%M")%></p>
-        <p>📍<%= booking.event.address %></p>
+        <h6 class="booking-index-date"><%= booking.event.date.strftime("%e %b %y") %></h6>
+        <p><i class="fas fa-ribbon icon-pink"></i>  <%= booking.event.charity.charity_name %></p>
+        <p><i class="fas fa-clock icon-pink"></i>  <%= booking.event.start_time.strftime("%H:%M")%></p>
+        <p><i class="fas fa-thumbtack icon-pink"></i>  <%= booking.event.address %></p>
       </div>
     <% end %>
   <% end %>
