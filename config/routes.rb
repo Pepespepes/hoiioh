@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   get 'details', to: 'pages#details'
   get 'dashboard', to: 'employers#dashboard'
 
-
+  mount ActionCable.server => '/cable'
   resources :charities, only: %i[create show] do
     resources :events, only: %i[new create]
   end
