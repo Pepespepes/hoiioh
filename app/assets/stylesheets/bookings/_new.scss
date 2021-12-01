@@ -31,3 +31,25 @@ line-height: 1.8;
 #booking-event-details {
   margin-top: 0px;
 }
+
+.confirm-booking {
+  position: fixed;
+  bottom: 0;
+  // width: 92vw;
+}
+
+.new-booking .title-and-back {
+  margin-top: 24px;
+  margin-bottom: 32px;
+}
+
+.new-booking .event-details {
+  padding-top: 16px;
+  margin-bottom: 20px;
+}
+
+.booking-form {
+  padding: 16px;
+  background-color: white;
+  border-radius: 4px;
+}
