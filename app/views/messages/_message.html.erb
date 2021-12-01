@@ -1,12 +1,12 @@
 <% if message.user == current_user %>
- <div class='chatroom-message msg-pink'>
-    <span class='d-flex justify-content-start ml-2'><small><strong>You</strong> - <%= message.created_at.strftime("%a %b %e at %l:%M%p") %></small></span>
+ <div class='chatroom-sender msg-black'>
+    <span class='date-name'><small><strong></strong> - <%= message.created_at.strftime("%a %b %e at %l:%M%p") %></small></span>
     <div class="d-flex justify-content-start ml-2 mb-1">
       <p class='current-user-content mb-0'><%= message.content %></p>
     </div>
   </div>
   <% else %>
-  <div class='chatroom-message msg-white'>
+  <div class='chatroom-message msg-pink'>
    <% if message.user.current_role == "Charity" %>
       <span class='d-flex justify-content-end mr-2'><small><strong><%= message.user.charity.charity_name %> </strong> - <%= message.created_at.strftime("%a %b %e at %l:%M%p") %></small></span>
       <% else %>
