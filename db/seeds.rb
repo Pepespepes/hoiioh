@@ -74,7 +74,7 @@ skyway = Charity.create!(charity_name: 'Skyway',
                              description: 'We offer a wide range of free-to-access opportunities at youth clubs, community venues, parks, estates, schools and on the streets. Some of the sessions we run focus on developing new skills, learning or participating in sport, but we recognise the most important things are to provide safe, welcoming spaces where people can relax, socialise and have fun.',
                              user: User.where(current_role: 'Charity')[1]
                             )
-national_childrens_bureau = Charity.create!(charity_name: "National Children's Bureau",
+national_childrens_bureau = Charity.create!(charity_name: "Children's Bureau",
                              category: 'Human Welfare',
                              description: 'As a society we provide a vital system of support and services to keep children safe and give them the best childhood. For over 50 years NCB has been driving change throughout this system to make it as effective as possible and to protect the children whose welfare is most at risk.',
                              user: User.where(current_role: 'Charity')[2]
@@ -105,7 +105,7 @@ access_to_sports = Charity.create!(charity_name: 'Access to Sports Project',
 ",
                              user: User.where(current_role: 'Charity')[7]
                             )
-humane_society_international = Charity.create!(charity_name: 'Humane Society International',
+humane_society_international = Charity.create!(charity_name: 'Humane Society',
                              category: 'Animal Welfare',
                              description: "Humane Society International works around the globe to promote the human-animal bond, rescue and protect dogs and cats, improve farm animal welfare, protect wildlife, promote animal-free testing and research, respond to natural disasters and confront cruelty to animals in all of its forms.",
                              user: User.where(current_role: 'Charity')[8]
@@ -140,7 +140,7 @@ british_exploring_society = Charity.create!(charity_name: 'British Exploring Soc
                             description: "British Exploring Society is a world class youth development charity with a unique heritage, founded on the belief that challenging experiences can transform lives, empowering and equipping young people with the courage, skills, resilience and determination to make the most of their future. Most young people return with increased self-belief, a dynamic peer group and the determination and ability to make the most of their future, regardless of where they started out.",
                             user: User.where(current_role: 'Charity')[14]
                            )
-marie_curie = Charity.create!(charity_name: 'Portobello Marie Curie shop',
+marie_curie = Charity.create!(charity_name: 'Portobello Marie Curie',
                             category: 'Charity Shops',
                             description: "Our charity shops raise funds so we can care for more people living with a terminal illness and their families. Shop, donate some items or volunteer.",
                             user: User.where(current_role: 'Charity')[15]
@@ -150,7 +150,7 @@ chelsea_foundation = Charity.create!(charity_name: 'The Chelsea Foundation',
                             description: "Formed in 2010, the Chelsea Foundation brings together the Football in the Community and the Education department along with the club’s other charitable and community activities, including our international work and anti-discrimination projects.",
                             user: User.where(current_role: 'Charity')[16]
                             )
-blue_cross_for_pets = Charity.create!(charity_name: 'Blue Cross for Pets Hammersmith',
+blue_cross_for_pets = Charity.create!(charity_name: 'Blue Cross for Pets',
                             category: 'Animal Welfare',
                             description: "Pets are at the heart of everything we do. Each year, thousands of cats, dogs, small pets and horses turn to our animal hospitals, clinics and rehoming services for treatment and to find them the happy homes they deserve. Meanwhile, our Education and Behaviour Teams prepare future pet owners to take responsibility and look after their pets for life.",
                             user: User.where(current_role: 'Charity')[17]
