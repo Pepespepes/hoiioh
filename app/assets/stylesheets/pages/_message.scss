@@ -39,21 +39,16 @@
 }
 
 .send-button {
-  color: #ff5757;
-  background: #fff;
-  border-radius: 8px;
-  display:block;
-  padding: 10px 15px;
-  border: none;
-  cursor: pointer;
-  opacity: 0.8;
-  position: fixed;
-  bottom: 100px;
-  right: 50px;
-  width: 200px;
+  margin-left: 16px;
+  margin-right: 16px;
+  width: 91vw;
 }
 
 .message-container {
   margin-top: 0;
   padding-bottom: 16px;
+}
+
+.chatroom_container {
+  margin: 0 16px;
 }
