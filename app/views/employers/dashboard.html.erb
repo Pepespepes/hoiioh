@@ -2,13 +2,13 @@
 
 <div class="dashboard">
 
-  <div id="dashboard-banner", style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1483058712412-4245e9b90334?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80);">
+  <div id="dashboard-banner", style="background-image: linear-gradient(rgba(0,0,0,0.45),rgba(0,0,0,0.45)), url(https://images.unsplash.com/photo-1483058712412-4245e9b90334?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80);">
     <div class="company-name">
-      <h5><%= @employer.company_name %></h5>
+      <h5>CSR Dashboard</h5>
       <%= image_tag 'ultratechlogo.png', class:"logo" %>
     </div>
     <div id="csr">
-      <h3>CSR Dashboard <%= Time.now.strftime("%Y") %>  </h3>
+      <h3><%= @employer.company_name %></h3>
     </div>
   </div>
 
@@ -31,7 +31,7 @@
             <i class="fas fa-user-friends icon-pink"></i>
           </div>
           <div class='employer-summary-card'>
-            <h5><%= @bookings.count %> events attended</h5>
+            <h5><%= pluralize(@bookings.count, 'event')%> attended</h5>
             <i class="fas fa-hand-holding-heart icon-pink"></i>
           </div>
           <div class='employer-summary-card'>
@@ -40,22 +40,36 @@
           </div>
         </div>
 
-        <h4 class="dashboard-subheading">Goals</h4>
+        <h4 class="dashboard-subheading">FY21 Goals</h4>
         <div class='employer-vol-summary'>
           <div class='employer-summary-card'>
             <h5><%= @enrol_goal %> employees</h5>
             <i class="fas fa-trophy icon-pink"></i>
-            <h5><%= number_to_percentage((@employees.count)/@enrol_goal.to_f*100, precision:0) %> complete</h5>
+            <% enrol_progress = number_to_percentage((@employees.count)/@enrol_goal.to_f*100, precision:0) %>
+            <%# <h5>Progress</h5> %>
+            <div class="progress">
+              <div class="progress-bar" role="progressbar" style="width: <%= enrol_progress %>;" aria-valuenow="<%= enrol_progress %>" aria-valuemin="0" aria-valuemax="100"><%= enrol_progress %></div>
+            </div>
           </div>
+
           <div class='employer-summary-card'>
             <h5><%= @events_goal %> events</h5>
             <i class="fas fa-medal icon-pink"></i>
-            <h5><%= number_to_percentage((@bookings.count)/@events_goal.to_f*100, precision:0) %> complete</h5>
+            <% events_progress = number_to_percentage((@bookings.count)/@events_goal.to_f*100, precision:0) %>
+            <%# <h5>Progress</h5> %>
+            <div class="progress">
+              <div class="progress-bar" role="progressbar" style="width: <%= events_progress %>;" aria-valuenow="<%= events_progress %>" aria-valuemin="0" aria-valuemax="100"><%= events_progress %></div>
+            </div>
           </div>
+
           <div class='employer-summary-card'>
             <h5><%= @hours_goal %> hours</h5>
             <i class="fas fa-award icon-pink"></i>
-            <h5><%= number_to_percentage((@hours.sum)/@hours_goal.to_f*100, precision:0) %> complete</h5>
+            <%# <h5>Progress</h5> %>
+            <% hours_progress = number_to_percentage((@hours.sum)/@hours_goal.to_f*100, precision:0) %>
+            <div class="progress">
+              <div class="progress-bar" role="progressbar" style="width: <%= hours_progress %>;" aria-valuenow="<%= hours_progress %>" aria-valuemin="0" aria-valuemax="100"><%= hours_progress %></div>
+            </div>
           </div>
         </div>
 
@@ -78,7 +92,7 @@
               <div class="card-employee-infos">
                 <% bookings = employee.bookings.select { |booking| booking.event.date < Time.now } %>
                 <% hours = bookings.map { |booking| booking.event.duration } %>
-                <p><i class="fas fa-calendar-week icon-pink"></i> <%= bookings.count %> events attended</p>
+                <p><i class="fas fa-calendar-week icon-pink"></i> <%= pluralize(bookings.count, 'event') %> attended</p>
                 <p><i class="fas fa-stopwatch icon-pink"></i> <%= hours.sum %> hours volunteered</p>
               </div>
             </div>
