@@ -448,25 +448,25 @@ Booking.create!(
 
 Booking.create!(
   event: sport_event,
-  volunteer: Volunteer.find(2),
+  volunteer: Volunteer.where(employer: katy_employer)[1],
   employer_associated: true
 )
 
 Booking.create!(
   event: charity_shop_event,
-  volunteer: Volunteer.find(3),
+  volunteer: Volunteer.where(employer: katy_employer)[2],
   employer_associated: true
 )
 
 Booking.create!(
   event: sport_event,
-  volunteer: Volunteer.find(3),
+  volunteer: Volunteer.where(employer: katy_employer)[2],
   employer_associated: true
 )
 
 Booking.create!(
   event: pepe_event_1,
-  volunteer: Volunteer.find(5),
+  volunteer: Volunteer.where(employer: katy_employer)[4],
   employer_associated: true
 )
 
