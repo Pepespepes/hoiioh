@@ -192,8 +192,19 @@ end
 puts "Employers created"
 
 # VOLUNTEERS
-katy_volunteer_counter = 0
-4.times do
+
+Volunteer.create!(
+    first_name: "Greta",
+    last_name: "Thunberg",
+    employer: katy_employer,
+    description: 'TO BE WRITTEN',
+    age: (18..80).to_a.sample,
+    dbs_checked: [true, false].sample,
+    user: User.where(current_role: 'Volunteer')[0]
+  )
+
+katy_volunteer_counter = 1
+3.times do
   Volunteer.create!(
     first_name: Faker::Name.unique.first_name,
     last_name: Faker::Name.unique.last_name,
@@ -448,7 +459,7 @@ Booking.create!(
 
 Booking.create!(
   event: sport_event,
-  volunteer: Volunteer.where(employer: katy_employer)[1],
+  volunteer: Volunteer.where(employer: katy_employer)[2],
   employer_associated: true
 )
 
@@ -460,7 +471,7 @@ Booking.create!(
 
 Booking.create!(
   event: sport_event,
-  volunteer: Volunteer.where(employer: katy_employer)[2],
+  volunteer: Volunteer.where(employer: katy_employer)[3],
   employer_associated: true
 )
 
