@@ -3,8 +3,9 @@
 <div class="dashboard">
 
   <div id="dashboard-banner", style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1483058712412-4245e9b90334?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80);">
-    <div id="company-name">
+    <div class="company-name">
       <h5><%= @employer.company_name %></h5>
+      <%= image_tag 'ultratechlogo.png', class:"logo" %>
     </div>
     <div id="csr">
       <h3>CSR Dashboard <%= Time.now.strftime("%Y") %>  </h3>
