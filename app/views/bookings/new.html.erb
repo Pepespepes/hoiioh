@@ -24,15 +24,15 @@
 
     <div class="event-timings">
       <div class="event-timings-detail">
-        <i class="fas fa-calendar-week"></i>
+        <i class="fas fa-calendar-week icon-pink"></i>
         <h4><%= @event.date.strftime("%e %b %y") %></h4>
       </div>
       <div class="event-timings-detail">
-        <i class="fas fa-clock"></i>
+        <i class="fas fa-clock icon-pink"></i>
         <h4><%= @event.start_time.strftime("%H:%M") %></h4>
       </div>
       <div class="event-timings-detail">
-        <i class="fas fa-hourglass-start"></i>
+        <i class="fas fa-hourglass-start icon-pink"></i>
         <h4>
           <% if @event.duration ==1 %>
             <%= "#{@event.duration} hour" %>

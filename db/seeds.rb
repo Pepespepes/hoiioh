@@ -99,7 +99,7 @@ crisis_hackney = Charity.create!(charity_name: 'Crisis Hackney',
                              description: 'Charity Shops',
                              user: User.where(current_role: 'Charity')[6]
                             )
-access_to_sports = Charity.create!(charity_name: 'Access to Sports Project',
+access_to_sports = Charity.create!(charity_name: 'Access to Sports',
                              category: 'Sports',
                              description: "The Access to Sports Project deliver a wide range of Sporting Activities for Children and Young People in Hackney, our programme is supported by Young Hackney, local community organisations, schools and the London Borough of Hackney.
 ",
@@ -130,22 +130,22 @@ hestia = Charity.create!(charity_name: 'Hestia',
                             description: "At Hestia we support adults and children in times of crisis. We deliver services across London and the surrounding regions, as well as campaign and advocate nationally on the issues that affect the people we work with. Last year we supported 15,238 men, women and children. This includes victims of modern slavery, women and children who have experienced domestic abuse, young care leavers and older people. From giving someone a home, to helping them to get the right mental health support, we support people at the moment of crisis and enable them to build a life beyond a crisis.",
                             user: User.where(current_role: 'Charity')[12]
                             )
-red_cross = Charity.create!(charity_name: 'Portobello Red Cross',
+red_cross = Charity.create!(charity_name: 'Red Cross',
                             category: 'Charity Shops',
                             description: "We fund young asylum seekers or young people with limited leave through higher education in the UK who are not entitled to student finance and cannot otherwise afford the costs of higher education. We fund this group of young people because their immigration status does not allow them to secure student finance and therefore does not allow them to access and progress in higher education, despite legally being allowed to live in the UK.",
                             user: User.where(current_role: 'Charity')[13]
                             )
-british_exploring_society = Charity.create!(charity_name: 'British Exploring Society',
+british_exploring_society = Charity.create!(charity_name: 'Exploring Society',
                             category: 'Human Welfare',
                             description: "British Exploring Society is a world class youth development charity with a unique heritage, founded on the belief that challenging experiences can transform lives, empowering and equipping young people with the courage, skills, resilience and determination to make the most of their future. Most young people return with increased self-belief, a dynamic peer group and the determination and ability to make the most of their future, regardless of where they started out.",
                             user: User.where(current_role: 'Charity')[14]
                            )
-marie_curie = Charity.create!(charity_name: 'Portobello Marie Curie',
+marie_curie = Charity.create!(charity_name: 'Marie Curie',
                             category: 'Charity Shops',
                             description: "Our charity shops raise funds so we can care for more people living with a terminal illness and their families. Shop, donate some items or volunteer.",
                             user: User.where(current_role: 'Charity')[15]
                            )
-chelsea_foundation = Charity.create!(charity_name: 'The Chelsea Foundation',
+chelsea_foundation = Charity.create!(charity_name: 'Chelsea Foundation',
                             category: 'Sports',
                             description: "Formed in 2010, the Chelsea Foundation brings together the Football in the Community and the Education department along with the club’s other charitable and community activities, including our international work and anti-discrimination projects.",
                             user: User.where(current_role: 'Charity')[16]
@@ -155,9 +155,9 @@ blue_cross_for_pets = Charity.create!(charity_name: 'Blue Cross for Pets',
                             description: "Pets are at the heart of everything we do. Each year, thousands of cats, dogs, small pets and horses turn to our animal hospitals, clinics and rehoming services for treatment and to find them the happy homes they deserve. Meanwhile, our Education and Behaviour Teams prepare future pet owners to take responsibility and look after their pets for life.",
                             user: User.where(current_role: 'Charity')[17]
                            )
-the_conservation_foundation = Charity.create!(charity_name: 'The Conservation Foundation',
+the_conservation_foundation = Charity.create!(charity_name: 'Conservation Fund',
                           category: 'Environment',
-                          description: "The Conservation Foundation creates and manages environmental projects, award schemes, awareness campaigns, publications and events covering wide ranging issues and aimed at different and diverse audiences.
+                          description: "The Conservation Fund creates and manages environmental projects, award schemes, awareness campaigns, publications and events covering wide ranging issues and aimed at different and diverse audiences.
                           Some include the spiritual dimension of concern for the environment. The Foundation is also an environmental incubator, helping fledgling organisations get off the ground and turning good ideas into fundable projects.",
                           user: User.where(current_role: 'Charity')[18]
                           )
@@ -236,7 +236,7 @@ hackney_events_addresses = ["25 Weymouth Terrace, London E2 8LT",
                             ]
 
 west_events_addresses =  ["11C Cornwall Cres, London W11 1PH",
-                          "Walmer Courtyard, 225-227 Walmer Rd, London W11 4EY",
+                          "225-227 Walmer Rd, London W11 4EY",
                           "27 Hillgate Pl, London W8 7SL",
                           "25 Bark Pl, London W2 4AT",
                           "3a Ladbroke Terrace, London W11 3PG",
@@ -248,13 +248,13 @@ west_events_addresses =  ["11C Cornwall Cres, London W11 1PH",
                           "22 Romilly St, London W1D 5AG",
                           "14 Bedford Row, London WC1R 4ED",
                           "50 Elliott's Row, London SE11 4SZ",
-                          "57 Palace Gardens Terrace, London W8 4RS",
+                          "66 Brunswick Gardens, London W8 4AN",
                           "42 Pilgrimage St, London SE1 4LL",
                           "12 Violet Rd, London E3 3QH",
                           "45 St Maur Rd, London SW6 4DR",
                           "6 Wells Pl, London SW18 3BF",
                           "4 Henley Street, London SW11 5BZ",
-                          "The Foundry, 17 Oval Way, London SE11 5RR"]
+                          "17 Oval Way, London SE11 5RR"]
 
 # EVENT NAMES
 event_names =  ["The Crucial Cause",
