@@ -108,11 +108,15 @@
 }
 
 .dbs-apply-link {
-  background-color: rgb(3, 184, 3);
+  background-color: rgba(255, 87, 87, 0.7);
   color: white;
   padding: 2px 6px;
   border-radius: 2px;
   margin-left: 2px;
+}
+
+.profile-summary h5 {
+  margin-bottom: 8px;
 }
 
 .profile-back {

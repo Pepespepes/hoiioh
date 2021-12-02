@@ -35,6 +35,7 @@
   </div>
 
   <div class='profile-summary'>
+    <h5>About me</h5>
     <p><%= current_user.volunteer.description %></p>
       <% unless current_user.volunteer.employer_id == nil %>
       <strong>Employer name: </strong><%= current_user.volunteer.employer.company_name %>
