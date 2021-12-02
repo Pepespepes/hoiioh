@@ -3,25 +3,18 @@
   <%= video_tag "homepagevid.mp4", autoplay: true, loop: true, muted: true, controls: false, playsinline: true, class: "home_video" %>
 
   <div class="homepage-headers">
-    <h1>Instant Help</h1>
+    <h1>Instant <br> Volunteering</h1>
   </div>
 
   <div class="homepage-buttons-container">
-
-    <%# <div class="homepage-button-container">
-      <a href="/events" class="homepage-button">See Events</a>
-    </div> %>
 
     <div class="homepage-button-container">
       <button onclick="location.href='/events'" class="homepage-button">Volunteer Now</button>
     </div>
 
-    <%# <div class="homepage-button-container">
-      <a href="#" class="homepage-button-invert" id="semergency-popup">Emergency Help</a>
-    </div> %>
-
     <div class="homepage-button-container">
-      <button id="emergency-popup" class="homepage-button-invert">Emergency Help</button>
+      <%# <button id="emergency-popup" class="homepage-button-invert">Emergency Help</button> %>
+      <i id="emergency-popup" class="fas fa-exclamation icon-pink-clickable"></i>
     </div>
   </div>
 </div>
