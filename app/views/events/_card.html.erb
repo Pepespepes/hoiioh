@@ -1,8 +1,8 @@
 <% human_welfare =  ['https://images.unsplash.com/photo-1582803824594-65b5b4632cad?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1471&q=80',
                   'https://images.unsplash.com/photo-1606092195730-5d7b9af1efc5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80',
                   'https://images.unsplash.com/photo-1608342381036-15657da6bf58?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80',
-                  'https://images.unsplash.com/photo-1511632765486-a01980e01a18?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80',
-                  'https://images.unsplash.com/photo-1601572545227-de6842f88454?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80']
+                  'https://images.unsplash.com/photo-1601572545227-de6842f88454?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80',
+                  'https://images.unsplash.com/photo-1511632765486-a01980e01a18?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80']
 animal_welfare = ['https://images.unsplash.com/photo-1548767797-d8c844163c4c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1471&q=80',
                   'https://images.unsplash.com/photo-1444212477490-ca407925329e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1528&q=80',
                   'https://images.unsplash.com/photo-1454179083322-198bb4daae41?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80',
@@ -26,19 +26,19 @@ charity_shops =  ['https://images.unsplash.com/photo-1470309864661-68328b2cd0a5?
 
 
 <%= link_to event_path(event), class:"card-link" do %>
-  <% image_url = %>
-    <% if event.charity.category == "Human Welfare"
-      human_welfare.sample
+  <% number = $counter %>
+  <% image_url =
+    if event.charity.category == "Human Welfare"
+      human_welfare[number]
     elsif event.charity.category == "Animal Welfare"
-      animal_welfare.sample
+      animal_welfare[number]
     elsif event.charity.category == "Environment"
-      environment.sample
+      environment[number]
     elsif event.charity.category == "Sports"
-      sports.sample
+      sports[number]
     elsif event.charity.category == "Charity Shops"
-      charity_shops.sample
+      charity_shops[number]
     end %>
-
 
   <div class="card-home">
     <div>
