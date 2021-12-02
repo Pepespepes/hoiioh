@@ -1,6 +1,11 @@
+<div class="chat-headers">
+  <h3>Chat</h3>
+</div>
 <div class="chatroom_container" data-controller="chat">
-  <div class="chat-headers">
-    <h3>Chat</h3>
+  <div class="chat-back">
+    <%= link_to :back do %>
+      <i class="fas fa-arrow-circle-left icon-pink-clickable"></i>
+    <% end %>
   </div>
   <div class="message-container" id="messages" data-chatroom-id="<%= @chatroom.id %>" data-user-id="<%= current_user.id %>">
     <% @chatroom.messages.each do |message| %>
@@ -14,7 +19,7 @@
                   label: false,
                   placeholder: "Type your message",
                   html: { rows: 4 } %>
-        <%= f.button :submit, 'Send', class:"button send-button" %>
+        <%= f.button :submit, 'Send', class:"send-button" %>
     <% end %>
   </div>
 </div>
