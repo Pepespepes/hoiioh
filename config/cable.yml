@@ -6,7 +6,7 @@ test:
 
 production:
   adapter: redis
-  url: redis://redistogo:7adb7d1d38ad5467a1be33e39394294c@soapfish.redistogo.com:11783/
+  url: <%= ENV.fetch("REDISCLOUD_URL") { "redis://localhost:6379/1" } %>
   channel_prefix: hoiioh_production
   ssl_params:
     verify_mode: <%= OpenSSL::SSL::VERIFY_NONE %>
