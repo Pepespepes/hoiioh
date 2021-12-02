@@ -21,15 +21,28 @@
   }
 }
 
-#company-name {
+.company-name {
   position: absolute;
-  top: 5%;
+  top: 4%;
   right: 8px;
-  color: white;
+  // color: white;
+  display: flex;
+  align-content: center;
+  justify-content: space-between;
+  width: 100%;
+  padding-left: 16px;
+
 }
 
-#company-name h5 {
-  font-size: 14px;
+.company-name img {
+  height: 30px;
+  width: 35px;
+}
+
+
+.company-name h5 {
+  font-size: 18px;
+  color: white;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
 }
 
@@ -41,7 +54,7 @@
 }
 
 #csr h3 {
-  font-size: 26px;
+  font-size: 32px;
   text-align: center;
   text-shadow: 1px 1px
   3px rgba(0,0,0,0.2);

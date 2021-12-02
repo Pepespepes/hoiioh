@@ -35,5 +35,7 @@ document.addEventListener('turbolinks:load', () => {
     }
   });
   initChatroomCable();
-  document.querySelector(".home_video").play();
+
+
+  // document.querySelector(".home_video").play();
 });
